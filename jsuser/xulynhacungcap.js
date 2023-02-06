@@ -223,91 +223,50 @@ function showDataNhaCungCap() {
 		event: 'getALLNCC',
 	};
 
-	// queryDataPost_JSON('php/apinhacungcap.php', dataSend, function (data) {
-	// 	console.log(data);
-	// 	if (data.items.length == 0) {
-	// 		$('.addListNhaCungCap').html(
-	// 			'<tr><td colspan=5>Không tìm thấy record</td><tr>'
-	// 		);
-	// 	} else {
-	// 		var htmls = '';
-	// 		var list = data.items;
-	// 		var stt = 1;
-	// 		for (var item in list) {
-	// 			var d = list[item];
-	// 			htmls =
-	// 				htmls +
-	// 				'<tr data-mancc="' +
-	// 				d.mancc +
-	// 				'" data-tenncc="' +
-	// 				d.tenncc +
-	// 				'" data-diachincc="' +
-	// 				d.diachincc +
-	// 				'" data-sdtncc="' +
-	// 				d.sdtncc +
-	// 				'<td>' +
-	// 				stt +
-	// 				'</td>' +
-	// 				'<td>' +
-	// 				d.mancc +
-	// 				'</td>' +
-	// 				'<td>' +
-	// 				d.tenncc +
-	// 				'</td>' +
-	// 				'<td>' +
-	// 				d.diachincc +
-	// 				'</td>' +
-	// 				'<td>' +
-	// 				d.sdtncc +
-	// 				'</td>' +
-	// 				'</tr>';
-	// 			stt++;
-	// 		}
-	// 		$('.addListNhaCungCap').html(htmls);
-	// 	}
-	// });
+	queryDataPost_JSON('php/apinhacungcap.php', dataSend, function (data) {
+		console.log(data);
+		if (data.items.length == 0) {
+			$('.addListNhaCungCap').html(
+				'<tr><td colspan=5>Không tìm thấy record</td><tr>'
+			);
+		} else {
+		var htmls = '';
+		var list = data.items;
+		var stt = 1;
+		for (var item in list) {
+			var d = list[item];
+			htmls =
+				htmls +
+				'<tr data-mancc="' +
+				d.mancc +
+				'" data-tenncc="' +
+				d.tenncc +
+				'" data-diachincc="' +
+				d.diachincc +
+				'" data-sdtncc="' +
+				d.sdtncc +
+				'"><td>' +
+				stt +
+				'</td>' +
+				'<td>' +
+				d.mancc +
+				'</td>' +
+				'<td>' +
+				d.tenncc +
+				'</td>' +
+				'<td>' +
+				d.diachincc +
+				'</td>' +
+				'<td>' +
+				d.sdtncc +
+				'</td>' +
+				'</tr>';
+			stt++;
+		}
+		console.log('abvavbas');
+		console.log(htmls);
+		$('.addListNhaCungCap').html(htmls);
+		}
+	});
 
-	var htmls = '';
-	const data = {
-		items: [
-			{ mancc: '1', tenncc: 'abc', diachincc: 'abc', sdtncc: 'abc@' },
-			{ mancc: '1', tenncc: 'abc', diachincc: 'abc', sdtncc: 'abc@' },
-			{ mancc: '1', tenncc: 'abc', diachincc: 'abc', sdtncc: 'abc@' },
-		],
-	};
-	var list = data.items;
-	var stt = 1;
-	for (var item in list) {
-		var d = list[item];
-		htmls =
-			htmls +
-			'<tr data-mancc="' +
-			d.mancc +
-			'" data-tenncc="' +
-			d.tenncc +
-			'" data-diachincc="' +
-			d.diachincc +
-			'" data-sdtncc="' +
-			d.sdtncc +
-			'"><td>' +
-			stt +
-			'</td>' +
-			'<td>' +
-			d.mancc +
-			'</td>' +
-			'<td>' +
-			d.tenncc +
-			'</td>' +
-			'<td>' +
-			d.diachincc +
-			'</td>' +
-			'<td>' +
-			d.sdtncc +
-			'</td>' +
-			'</tr>';
-		stt++;
-	}
-	console.log('abvavbas');
-	console.log(htmls);
-	$('.addListNhaCungCap').html(htmls);
 }
