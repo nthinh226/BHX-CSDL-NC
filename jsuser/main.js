@@ -12,6 +12,10 @@ $(document).ready(function () {
 		$('.showmodalthemnhanvien').modal('show');
 	});
 
+	$('.btnclose').click(function () {
+		$('.showmodalthemnhanvien').modal('hide');
+	});
+
 	$('.btn_change_pass').click(function () {
 		//var txtpassold=$('.txtpassold').val();
 		var txtpassnew = $('.txtpassnew').val();
@@ -135,10 +139,11 @@ $(document).ready(function () {
 				'</li>'
 		);
 
+		showDataNhaCungCap();
+
 		swapMain('formnhacungcap');
 		resetButtonNCC();
 		resetViewNCC();
-		showDataNhaCungCap();
 	});
 
 	// sản phẩm
@@ -270,6 +275,9 @@ function queryDataPost_JSON(url, dataSend, callback) {
 		async: true,
 		dataType: 'json',
 		success: callback,
+		error: function (jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR.responseText);
+		},
 	});
 }
 
