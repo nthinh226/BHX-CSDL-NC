@@ -1,0 +1,49 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+<body>
+    <input id="imagefile" type="file" multiple="multiple" />
+    <img src="" width="200" height="200" id="imgpreview" style="display: none;">
+    <input type="hidden" id="savepath"/>
+
+<script src="./spuploadimagestatus/canvas-to-blob.min.js"></script>
+<script src="./spuploadimagestatus/resize.js"></script>
+<script src="./spuploadimagestatus/app.js"></script>
+<script type="text/javascript">
+	$( document ).ready(function() {
+    $("#imagefile").change(function ()
+    {
+	    $("#imgpreview").show();
+	    if (typeof(FileReader)!="undefined"){
+	       
+	        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png)$/;
+	        $($(this)[0].files).each(function () {
+	            var getfile = $(this);
+	            if (regex.test(getfile[0].name.toLowerCase())) {
+	                var reader = new FileReader();
+	                reader.onload = function (e) {
+	                     $("#imgpreview").attr("src",e.target.result);
+	                }
+	                reader.readAsDataURL(getfile[0]);
+					document.getElementById("savepath").value=getfile[0].name;
+	            } 
+	            else {
+	                alert(getfile[0].name + " Không phải là file hình.");
+	                return false;
+	            }
+	        });
+	    }
+	     else {
+	         alert("Browser does not supportFileReader.");
+	     }
+    });
+	
+});
+</script>	
+
+</body>
+</html>

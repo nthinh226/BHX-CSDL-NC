@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administrator</title>
+    <!-- icons -->
+    <link rel="icon" href="images/logont226-icon.png" sizes="32x32">
+    <!-- fontanwesome-6.0 -->
+    <link rel="stylesheet" href="plugins/fontawesome-6.0/css/all.min.css" />
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="font/font_source_sans_pro.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <!-- Sweetalert2 -->
+    <link rel="stylesheet" type="text/css" href="plugins/sweetalert2/sweetalert2.min.css">
+    <!-- style user -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="vendors/feather/feather.css">
+
+    <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/typicons/typicons.css">
+    <link rel="stylesheet" href="vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+
+    <link rel="stylesheet" href="js/select.dataTables.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="images/favicon.png" />
+  </head>
+  <style>
+    .navbar-white {
+      background-color: #018a45;
+      color: #1f2d3d;
+    }
+  </style>
+
+  <body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+
+      <!-- Preloader -->
+      <div class="preloader flex-column justify-content-center align-items-center ">
+        <img class="animation__shake" src="images/logont226-icon.png" alt="NT226Logo" height="60" width="60">
+      </div>
+
+      <!---------------------------------------------------------------------------- Navbar ---------------------------------------------------------------------------->
+
+
+      <!-- dev -->
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+
+          <!-- Messages Dropdown Menu -->
+          <li class="nav-item dropdown">
+
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <a href="#" class="dropdown-item">
+                <!-- Message Start -->
+
+                <!-- Message End -->
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">
+                <!-- Message Start -->
+
+                <!-- Message End -->
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">
+                <!-- Message Start -->
+
+                <!-- Message End -->
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+            </div>
+          </li>
+          <!-- Notifications Dropdown Menu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+              <i class="far fa-bell"></i>
+              <span class="badge badge-warning navbar-badge">15</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <span class="dropdown-item dropdown-header">15 Notifications</span>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-envelope mr-2"></i> 4 new messages
+                <span class="float-right text-muted text-sm">3 mins</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-users mr-2"></i> 8 friend requests
+                <span class="float-right text-muted text-sm">12 hours</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-file mr-2"></i> 3 new reports
+                <span class="float-right text-muted text-sm">2 days</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+            </div>
+          </li>
+          <!-- avt -->
+          <li class="nav-item dropdown d-none d-lg-block user-dropdown">
+            <a class="nav-link show" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="#" class="img-circle elevation-2" alt="User Image">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown show" aria-labelledby="UserDropdown"
+              data-bs-popper="none">
+              <div class="dropdown-header text-center">
+                <img class="img-md rounded-circle" src="images/ngocthinh.jpg" alt="Profile image">
+                <p class="mb-1 mt-3 font-weight-semibold addusername"></p>
+              </div>
+            </div>
+          </li>
+          <!-- avt -->
+          <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+        <!-- Brand Logo -->
+        <img width="250" height="57 " src="images/logobhx.png" alt="logo" />
+        <!-------------------------------------------------------------------------- Sidebar -------------------------------------------------------------------------->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img src="images/ngocthinh.jpg" class="img-circle elevation-2 addavatar" alt="User Image">
+            </div>
+            <div class="info">
+              <a href="#" class="d-block addusername"></a>
+            </div>
+          </div> -->
+
+          <!--------------------------------------------------------------------- Sidebar Menu --------------------------------------------------------------------->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- <li class="nav-item danhmuc">
+                <a class="nav-link" href="#">
+                  <i class="fa fa-h-square" aria-hidden="true"></i> &nbsp;&nbsp;
+                  <span class="menu-title">Trang chủ</span>
+                </a>
+              </li>
+
+              <li class="nav-item danhmuc">
+                <a class="nav-link" href="index.html">
+                  <i class="fa fa-h-square" aria-hidden="true"></i> &nbsp;&nbsp;
+                  <span class="menu-title">Sản phẩm</span>
+                </a>
+              </li> -->
+
+              <li class="nav-item menutrangchu">
+                <a href="#" class="nav-link tendanhmuc">
+                  <i class="fas fa-building"></i> &nbsp;&nbsp;
+                  <p>Trang chủ</p>
+                </a>
+              </li>
+
+              <li class="nav-item menukeluong">
+                <a href="#" class="nav-link tendanhmuc">
+                  <i class="fas fa-building"></i> &nbsp;&nbsp;
+                  <p>Kê lương</p>
+                </a>
+              </li>
+
+              <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+              <li class="nav-item menu-open danhmuc">
+                <a href="#" class="nav-link active tendanhmuc">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Danh mục
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item menunhacungcap">
+                    <a href="#" class="nav-link">&nbsp;&nbsp;
+                      <i class="fas fa-building"></i>
+                      <p>Nhà cung cấp</p>
+                    </a>
+                  </li>
+                  <li class="nav-item menutheloai">
+                    <a href="#" class="nav-link">&nbsp;&nbsp;
+                      <i class="fa fa-list-alt" aria-hidden="true"></i>
+                      <p>Thể loại</p>
+                    </a>
+                  </li>
+                  <li class="nav-item menuthuonghieu">
+                    <a href="#" class="nav-link">&nbsp;&nbsp;
+                      <i class="far fa-registered"></i>
+                      <p>Thương hiệu</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item menusanpham">
+                    <a href="#" class="nav-link">&nbsp;&nbsp;
+                      <i class="fas fa-desktop"></i>
+                      <p>Sản phẩm</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item menuthuonghieusanpham">
+                    <a href="#" class="nav-link">&nbsp;&nbsp;
+                      <i class="fab fa-hive"></i>
+                      <p>Thương hiệu sản phẩm</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item tendanhmucnvbh">
+                <a href="#" class="nav-link tennghiepvubanhang">
+                  <i class="fas fa-store-alt"></i>
+                  <p>
+                    Nghiệp vụ bán hàng
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item menuxemdonhang">
+                    <a href="#" class="nav-link">&nbsp;&nbsp;
+                      <i class="fas fa-arrow-circle-right nav-icon"></i>
+                      <p>Xem đơn hàng</p>
+                    </a>
+                  </li>
+                  <li class="nav-item menubaocaodoanhthu">
+                    <a href="#" class="nav-link">&nbsp;&nbsp;
+                      <i class="fas fa-arrow-circle-right nav-icon"></i>
+                      <p>Báo cáo doanh thu</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item menuquanlytaikhoan">
+                <a href="#" class="nav-link tenmenuquanlytaikhoan">
+                  <i class="fas fa-users-cog"></i>
+                  <p>
+                    Quản lý tài khoản
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item menutaikhoannhanvien">
+                    <a href="#" class="nav-link">&nbsp;&nbsp;
+                      <i class="fas fa-user-plus"></i>
+                      <p>Tài khoản nhân viên</p>
+                    </a>
+                  </li>
+                  <li class="nav-item menutaikhoankhachhang">
+                    <a href="#" class="nav-link">&nbsp;&nbsp;
+                      <i class="fas fa-user-circle"></i>
+                      <p>Tài khoản khách hàng</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+      <!-- kết thúc của slidebar -->
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1 class="m-0">Quản trị</h1>
+              </div><!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right titlestatus">
+                </ol>
+              </div><!-- /.col -->
+            </div><!-- /.row -->
+          </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!------------------------------------------------------------------------- Main content ------------------------------------------------------------------------->
+        <section class="content">
+          <!-- Danh mục -->
+          <!----------------------------------------------------------------------quản lý thể loại---------------------------------------------------------------------->
+          <!-- trang chu-->
+          <div class="row formtrangchu is-hidden">
+            <section class="col-lg-12">
+              <div class="card">
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <div class="col-sm-12">
+                        <div class="col-lg-3 d-flex flex-column">
+                          <form class="search-form" action="#">
+                            <input type="search" class="form-control" placeholder="Search..." title="Search here">
+                          </form>
+                        </div>
+                        <div class="home-tab">
+                          <div class="tab-content tab-content-basic">
+                            <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                              aria-labelledby="overview">
+                              <div class="row">
+                                <div class="col-lg-8 d-flex flex-column">
+                                  <div class="row flex-grow">
+                                    <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                                      <div class="card card-rounded">
+                                        <div class="card-body">
+                                          <h3>trang chủ</h3>
+                                          <div class="d-sm-flex justify-content-between align-items-start">
+                                            <div>
+                                              <h4 class="card-title card-title-dash"></h4>
+                                              <h5 class="card-subtitle card-subtitle-dash"></h5>
+                                            </div>
+                                            <div id="performance-line-legend">
+                                              <div class="chartjs-legend">
+                                                <ul>
+                                                  <li><span style="background-color:#1F3BB3"></span>This week</li>
+                                                  <li><span style="background-color:#52CDFF"></span>Last week</li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="chartjs-wrapper mt-5">
+                                            <div class="chartjs-size-monitor">
+                                              <div class="chartjs-size-monitor-expand">
+                                                <div class=""></div>
+                                              </div>
+                                              <div class="chartjs-size-monitor-shrink">
+                                                <div class=""></div>
+                                              </div>
+                                            </div>
+                                            <canvas id="performaneLine"
+                                              style="display: block; width: 639px; height: 150px;" width="639"
+                                              height="150" class="chartjs-render-monitor"></canvas>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div><!-- /.card-body -->
+              </div>
+            </section>
+          </div>
+          <!-- end kê lương -->
+          <!-- Ke luong -->
+          <div class="row formkeluong is-hidden">
+            <section class="col-lg-12">
+              <div class="card">
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <div class="col-sm-12">
+                        <div class="col-lg-3 d-flex flex-column">
+                          <form class="search-form" action="#">
+                            <input type="search" class="form-control" placeholder="Search..." title="Search here">
+                          </form>
+                        </div>
+                        <div class="home-tab">
+                          <div class="tab-content tab-content-basic">
+                            <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                              aria-labelledby="overview">
+                              <div class="row">
+                                <div class="col-lg-8 d-flex flex-column">
+                                  <div class="row flex-grow">
+                                    <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                                      <div class="card card-rounded">
+                                        <div class="card-body">
+                                          <h3>Doanh thu</h3>
+                                          <div class="d-sm-flex justify-content-between align-items-start">
+                                            <div>
+                                              <h4 class="card-title card-title-dash"></h4>
+                                              <h5 class="card-subtitle card-subtitle-dash"></h5>
+                                            </div>
+                                            <div id="performance-line-legend">
+                                              <div class="chartjs-legend">
+                                                <ul>
+                                                  <li><span style="background-color:#1F3BB3"></span>This week</li>
+                                                  <li><span style="background-color:#52CDFF"></span>Last week</li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="chartjs-wrapper mt-5">
+                                            <div class="chartjs-size-monitor">
+                                              <div class="chartjs-size-monitor-expand">
+                                                <div class=""></div>
+                                              </div>
+                                              <div class="chartjs-size-monitor-shrink">
+                                                <div class=""></div>
+                                              </div>
+                                            </div>
+                                            <canvas id="performaneLine"
+                                              style="display: block; width: 639px; height: 150px;" width="639"
+                                              height="150" class="chartjs-render-monitor"></canvas>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div><!-- /.card-body -->
+              </div>
+            </section>
+          </div>
+          <!-- end kê lương -->
+          <!----------------------------------------------------------------------quản lý thể loại---------------------------------------------------------------------->
+          <div class="row formtheloai is-hidden">
+            <section class="col-lg-12">
+              <div class="card">
+                <div class="card-header bg-danger">
+                  <h3 class="card-title">
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp;
+                    Thông tin của thể loại sản phẩm
+                  </h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form class="form-horizontal">
+                        <div class="card-body">
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label ">Mã Thể Loại
+                                <span class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtmatl"
+                                  placeholder="Nhập mã thể loại của sản phẩm">
+                              </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                              <label for="inputPassword3" class="col-sm-6 col-form-label">Tên Thể Loại
+                                <span class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txttentl"
+                                  placeholder="Nhập tên thể loại của sản phẩm">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="inputEmail3" class="col-sm-12 col-form-label">Mô tả</label>
+                              <div class="col-sm-12">
+                                <textarea class="form-control txtmotatl"
+                                  placeholder="Chú thích của thể loại sản phẩm"></textarea>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                          <button type="button" class="btn btn-info btnthemtl"><i
+                              class="fa-solid fa-file-plus "></i>Thêm</button>&nbsp;
+                          <button type="button" class="btn btn-info btnluutl"><i
+                              class="fa-solid fa-floppy-disk"></i>&nbsp;Lưu</button>&nbsp;
+                          <button type="button" class="btn btn-info btnxoatl"><i
+                              class="fa-solid fa-trash-can "></i>&nbsp;Xóa</button>&nbsp;
+                          <button type="button" class="btn btn-info btnsuatl"><i
+                              class="fa-solid fa-pen-to-square "></i>Sửa</button>
+                          <button type="button" class="btn btn-default float-right btnlamlaitl">Làm lại</button>
+                        </div>
+                        <!-- /.card-footer -->
+                      </form>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">Các thể loại hiện có:</h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <!-- table-responsive giúp chỉnh khung hình -->
+                      <div class="card-body p-0 table-responsive display">
+                        <table class="table table-hover">
+
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã Thể Loại</th>
+                              <th>Tên Thể Loại</th>
+                              <th>Mô tả</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListTheLoai">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </div>
+                </div><!-- /.card-body -->
+              </div>
+            </section>
+          </div>
+          <!-- end quản lý thể loại -->
+
+          <!--------------------------------------------------------------------quản lý thương hiệu-------------------------------------------------------------------->
+          <div class="row formthuonghieu">
+            <section class="col-lg-12">
+              <div class="card">
+                <div class="card-header bg-info">
+                  <h3 class="card-title"><i class="far fa-registered"></i>&nbsp;Thông tin của thương hiệu sản phẩm</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form class="form-horizontal">
+                        <div class="card-body">
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label ">Mã Thương Hiệu <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtmath"
+                                  placeholder="Nhập mã thương hiệu của sản phẩm">
+                              </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                              <label for="inputPassword3" class="col-sm-6 col-form-label">Tên Thương Hiệu <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txttenth"
+                                  placeholder="Nhập tên thương hiệu của sản phẩm">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Email <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="email" class="form-control txtemailth" placeholder="Nhập địa chỉ email">
+                              </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                              <label for="inputPassword3" class="col-sm-6 col-form-label">SDT <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtsdtth" placeholder="Nhập số điện thoại">
+                              </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                              <label for="inputPassword3" class="col-sm-6 col-form-label">FAX</label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtfaxth" placeholder="Nhập số Fax">
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="inputEmail3" class="col-sm-12 col-form-label">Địa chỉ <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtdiachith" placeholder="Nhập địa chỉ"></input>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="inputEmail3" class="col-sm-12 col-form-label">Website</label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtwebsiteth"
+                                  placeholder="Nhập địa chỉ website"></input>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+
+                          <button type="button" class="btn btn-info btnthemth"><i
+                              class="fa-solid fa-file-plus "></i>Thêm</button>&nbsp;
+                          <button type="button" class="btn btn-info btnluuth"><i
+                              class="fa-solid fa-floppy-disk"></i>&nbsp;Lưu</button>&nbsp;
+                          <button type="button" class="btn btn-info btnxoath"><i
+                              class="fa-solid fa-trash-can "></i>&nbsp;Xóa</button>&nbsp;
+                          <button type="button" class="btn btn-info btnsuath"><i
+                              class="fa-solid fa-pen-to-square "></i>Sửa</button>
+                          <button type="button" class="btn btn-default float-right btnlamlaith">Làm lại</button>
+
+                        </div>
+                        <!-- /.card-footer -->
+                      </form>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">Các thương hiệu hiện có:</h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã TH</th>
+                              <th>Tên TH</th>
+                              <th>Email</th>
+                              <th>SDT</th>
+                              <th>Fax</th>
+                              <th>Địa chỉ</th>
+                              <th>Website</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListThuongHieu">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </div>
+                </div><!-- /.card-body -->
+              </div>
+            </section>
+          </div>
+          <!-- end quản lý thương hiệu -->
+
+          <!---------------------------------------------------------------- quản lý nhà cung cấp ---------------------------------------------------------------->
+          <div class="row formnhacungcap">
+            <section class="col-lg-12">
+              <div class="card">
+                <div class="card-header bg-primary">
+                  <h3 class="card-title"><i class="fas fa-building">&nbsp;</i>Thông tin của nhà cung cấp </h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form class="form-horizontal">
+                        <div class="card-body">
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label ">Mã NCC <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtmancc"
+                                  placeholder="Nhập mã nhà cung cấp của sản phẩm">
+                              </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                              <label for="inputPassword3" class="col-sm-6 col-form-label">Tên NCC <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txttenncc"
+                                  placeholder="Nhập tên nhà cung cấp của sản phẩm">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Địa chỉ</label>
+                              <div class="col-sm-12">
+                                <input type="email" class="form-control txtdiachincc" placeholder="Nhập địa chỉ email">
+                              </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                              <label for="inputPassword3" class="col-sm-6 col-form-label">SDT <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtsdtncc" placeholder="Nhập số điện thoại">
+                              </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                              <label for="inputPassword3" class="col-sm-6 col-form-label">Fax</label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtfaxncc" placeholder="Nhập số Fax">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputPassword3" class="col-sm-6 col-form-label">Email <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="email" class="form-control txtemailncc" placeholder="Nhập địa chỉ email">
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+
+                          <button type="button" class="btn btn-info btnthemncc"><i
+                              class="fa-solid fa-file-plus "></i>Thêm</button>&nbsp;
+                          <button type="button" class="btn btn-info btnluuncc"><i
+                              class="fa-solid fa-floppy-disk"></i>&nbsp;Lưu</button>&nbsp;
+                          <button type="button" class="btn btn-info btnxoancc"><i
+                              class="fa-solid fa-trash-can "></i>&nbsp;Xóa</button>&nbsp;
+                          <button type="button" class="btn btn-info btnsuancc"><i
+                              class="fa-solid fa-pen-to-square "></i>Sửa</button>
+                          <button type="button" class="btn btn-default float-right btnlamlaincc">Làm lại</button>
+
+                        </div>
+                        <!-- /.card-footer -->
+                      </form>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <h3 class="card-title">Các nhà cung cấp hiện có:</h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã NCC</th>
+                              <th>Tên NCC</th>
+                              <th>Địa chỉ</th>
+                              <th>Email</th>
+                              <th>SDT</th>
+                              <th>Fax</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListNhaCungCap">
+                            <!-- autofill -->
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </div>
+                </div><!-- /.card-body -->
+              </div>
+            </section>
+          </div>
+          <!-- end quản lý nhà cung cấp -->
+
+          <!------------------------------------------------------------------- quản lý sản phẩm ------------------------------------------------------------------->
+          <div class="row formsanpham">
+            <section class="col-lg-12">
+              <div class="card">
+                <div class="card-header bg-lightblue">
+                  <h3 class="card-title"><i class="fas fa-desktop"></i>&nbsp;Thông tin sản phẩm</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form class="form-horizontal" enctype="multipart/form-data">
+                        <div class="card-body">
+
+                          <div class="form-group row">
+                            <div class="col-sm-6 row-masanpham">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label ">Mã SP</label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtmasp" placeholder="Nhập mã sản phẩm" readonly>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label ">Tên sản phẩm <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txttensp" placeholder="Nhập tên sản phẩm">
+                              </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Nhà cung cấp <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <select class="form-control cbmanccsp">
+                                  <!-- <option value="">Chọn thương hiệu</option>
+                                <option value="">Asus</option>
+                                <option value="">Intel</option> -->
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label ">Thể loại <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <select class="form-control cbmaloaisp">
+
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label ">Thương hiệu <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <select class="form-control cbmathsp">
+                                  <!-- <option value="">Chọn thương hiệu</option>
+                                <option value="">Asus</option>
+                                <option value="">Intel</option> -->
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Giá sản phẩm <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtgiasp" placeholder="">
+                              </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Giá khuyến mãi</label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtgiakhuyenmaisp" placeholder="">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Mô tả sản phẩm</label>
+                              <div class="col-sm-12">
+                                <textarea class="form-control txtmotasp" rows="5" cols="40"></textarea>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <!-- text input -->
+                              <div class="form-group">
+                                <label class="progresscommon"> Ảnh sản phẩm</label>
+                                <div class="iconimage">
+                                  <input id="imgsanpham" style="display:none" type="file" accept="image/*" />
+                                  <a href="#">
+                                    <label for="imgsanpham" class="custom-file-upload" id="imgsanpham">
+                                      <img width="25px" style="border:0px" src="images/iconuploadimage.png" />Chọn
+                                      ảnh</label>
+                                  </a>
+                                </div>
+                                <div class="col-sm-2 imgsanpham is-hidden">
+                                  <img src="" id="imgPreviewSanPham" width="250" height="150">
+                                  <i class="fa fa-trash btndeletefilesanpham"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+
+                          <button type="button" class="btn btn-info btnthemsp"><i
+                              class="fa-solid fa-file-plus "></i>Thêm</button>&nbsp;
+                          <button type="button" class="btn btn-info btnluusp"><i
+                              class="fa-solid fa-floppy-disk"></i>&nbsp;Lưu</button>&nbsp;
+                          <button type="button" class="btn btn-info btnxoasp"><i
+                              class="fa-solid fa-trash-can "></i>&nbsp;Xóa</button>&nbsp;
+                          <button type="button" class="btn btn-info btnsuasp"><i
+                              class="fa-solid fa-pen-to-square "></i>Sửa</button>
+                          <button type="button" class="btn btn-default float-right btnlamlaisp">Làm lại</button>
+                        </div>
+                        <!-- /.card-footer -->
+                      </form>
+                    </div>
+                    <div class="card">
+                      <div class="row">
+
+                        <div class="card-header col-sm-9">
+                          <h3 class="card-title">Các sản phẩm hiện có:</h3>
+                        </div>
+
+                        <div class="card-header col-sm-3">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="form-control txtfindsanpham" placeholder='Gõ nội dung cần tìm...'>
+                          </div>
+                        </div>
+
+
+                      </div>
+
+                      <!-- /.card-header -->
+                      <div class="card-body p-0 table-responsive">
+                        <table class="table table-hover">
+
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã SP</th>
+                              <!-- <th>Tên TL</th>
+                            <th>Tên TH</th>
+                            <th>Tên NCC</th> -->
+                              <th>Tên SP</th>
+                              <th>Giá SP</th>
+                              <th>Giá KM</th>
+                              <th>Mô tả</th>
+                              <th>Hình ảnh SP</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListSanPham">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="pagenumbersanpham">
+                      </div>
+                    </div>
+                  </div><!-- /.card-body -->
+                </div>
+            </section>
+          </div> <!-- end quản lý sản phẩm -->
+
+          <!------------------------------------------------------------------- quản lý thương hiệu sản phẩm ------------------------------------------------------------------->
+          <div class="row formthuonghieusanpham">
+            <section class="col-lg-12">
+              <div class="card">
+                <div class="card-header bg-pink">
+                  <h3 class="card-title"><i class="fab fa-hive"></i>&nbsp;Thông tin thương hiệu sản phẩm</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form class="form-horizontal" enctype="multipart/form-data">
+                        <div class="card-body">
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label ">Tên thương hiệu</label>
+                              <div class="col-sm-12">
+                                <select class="form-control cbthuonghieusanpham">
+                                  <option value="">Chọn thương hiệu</option>
+                                  <option value="">Chọn thương hiệu</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label ">Tên sản phẩm</label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txttenthsp" placeholder="Tên sản phẩm" readonly>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+
+
+                          <button type="button" class="btn btn-default float-right btnlamlaithsp">Làm lại</button>
+                        </div>
+                        <!-- /.card-footer -->
+                      </form>
+                    </div>
+                    <div class="card">
+                      <div class="row">
+
+                        <div class="card-header col-sm-9 title-thuonghieusanpham">
+                          <h3 class="card-title ">Bảng thương hiệu sản phẩm</h3>
+                        </div>
+
+                        <div class="card-header col-sm-3">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="form-control txtfindthuonghieusanpham"
+                              placeholder='Gõ nội dung cần tìm...'>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <!-- /.card-header -->
+                      <div class="card-body p-0 table-responsive">
+                        <table class="table table-hover">
+
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã SP</th>
+                              <th>Tên SP</th>
+                              <th>Hình ảnh SP</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListThuongHieuSanPham">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="pagenumberthuonghieusanpham">
+                      </div>
+                    </div>
+                  </div><!-- /.card-body -->
+                </div>
+            </section>
+          </div> <!-- end quản lý thương hiệu sản phẩm -->
+
+          <!-- end danh mục -->
+
+          <!-------------------------------------------------------------------- nghiệp vụ bán hàng -------------------------------------------------------------------->
+          <div class="row formxemdonhang">
+            <section class="col-lg-12">
+              <div class="card">
+                <div class="card-header bg-danger">
+                  <h3 class="card-title"><i class="far fa-star mr-1"></i>Đơn đặt hàng</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- đơn hàng trong ngày -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+
+                      <div class="row">
+                        <div class="col-12">
+
+                          <div class="card-header">
+                            <h3 class="card-title">Đơn hàng trong ngày</h3>
+                            <div class="card-tools">
+                              <div class="input-group input-group-sm" style="width: 150px;">
+                                <input type="text" class="form-control float-right txtfinddonhangtrongngay"
+                                  placeholder="Search">
+
+                                <div class="input-group-append">
+                                  <button type="submit" class="btn btn-default">
+                                    <i class="fas fa-search"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-header -->
+                          <div class="card-body table-responsive p-0" style="height: 300px;">
+                            <table class="table table-head-fixed text-nowrap table-hover">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Số đơn hàng</th>
+                                  <th>Ngày đặt</th>
+                                  <th>Tổng tiền</th>
+                                  <th>Trạng thái</th>
+                                  <th>Thao tác</th>
+                                </tr>
+                              </thead>
+                              <tbody class="addListDonDatHangTrongNgay">
+
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- /.card-body -->
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.card-body -->
+                </div><!-- end đơn hàng trong ngày -->
+
+                <!-- đơn hàng đang xử lý -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+
+                      <div class="row">
+                        <div class="col-12">
+
+                          <div class="card-header">
+                            <h3 class="card-title">Đơn hàng đang xử lý</h3>
+                            <div class="card-tools">
+                              <div class="input-group input-group-sm" style="width: 150px;">
+                                <input type="text" class="form-control float-right txtfinddonhangdangxuly"
+                                  placeholder="Search">
+
+                                <div class="input-group-append">
+                                  <button type="submit" class="btn btn-default">
+                                    <i class="fas fa-search"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-header -->
+                          <div class="card-body table-responsive p-0" style="height: 300px;">
+                            <table class="table table-head-fixed text-nowrap table-hover">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Số đơn hàng</th>
+                                  <th>Ngày đặt</th>
+                                  <th>Tổng tiền</th>
+                                  <th>Trạng thái</th>
+                                  <th>Thao tác</th>
+                                </tr>
+                              </thead>
+                              <tbody class="addListDonDatHangDangXuLy">
+
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- /.card-body -->
+
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div><!-- /.card-body -->
+                </div><!-- end đơn hàng đang xử lý -->
+
+                <!-- đơn hàng đã hoàn thành -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+
+                      <div class="row">
+                        <div class="col-12">
+
+                          <div class="card-header">
+                            <h3 class="card-title">Đơn hàng đã hoàn thành</h3>
+
+                            <div class="card-tools">
+                              <div class="input-group input-group-sm" style="width: 150px;">
+                                <input type="text" class="form-control float-right txtfinddonhanghoanthanh"
+                                  placeholder="Search">
+
+                                <div class="input-group-append">
+                                  <button type="submit" class="btn btn-default">
+                                    <i class="fas fa-search"></i>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /.card-header -->
+                          <div class="card-body table-responsive p-0" style="height: 300px;">
+                            <table class="table table-head-fixed text-nowrap table-hover">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Số đơn hàng</th>
+                                  <th>Ngày đặt</th>
+                                  <th>Tổng tiền</th>
+                                  <th>Trạng thái</th>
+                                  <th>Thao tác</th>
+                                </tr>
+                              </thead>
+                              <tbody class="addListDonDatHangHoanThanh">
+
+                              </tbody>
+                            </table>
+                          </div>
+                          <!-- /.card-body -->
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div><!-- /.card-body -->
+                </div><!-- end đơn hàng đã hoàn thành -->
+            </section>
+          </div>
+          <!-- báo cáo doan thu-->
+          <div class="row formbaocaodoanhthu">
+            <section class="col-lg-12">
+              <div class="card">
+                <div class="card-header bg-danger">
+                  <h3 class="card-title"><i class="far fa-star mr-1"></i>Báo cáo doanh thu</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form class="form-horizontal">
+                        <div class="card-body">
+
+                          <div class="form-group row">
+                            <div class="col-sm-4">
+                              <label for="inputEmail3" class="col-sm col-form-label ">Từ ngày</label>
+                              <div class="col-sm-12">
+                                <input type="date" class="form-control txtdatestart">
+                              </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <label for="inputEmail3" class="col-sm col-form-label ">Đến ngày</label>
+                              <div class="col-sm-12">
+                                <input type="date" class="form-control txtdateend">
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- /.card-body -->
+
+                        <!-- /.card-footer -->
+                      </form>
+                    </div>
+                    <div class="card bangbaocaodoanhthu">
+                      <div class="card-header">
+                        <h3 class="card-title">Doanh thu</h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th>Ngày</th>
+                              <th>Tổng số đơn</th>
+                              <th>Tổng tiền</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListBaoCaoDoanhThu">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                    </div>
+                  </div>
+                </div><!-- /.card-body -->
+              </div>
+            </section>
+          </div>
+          <!-- end báo cáo doanh thu -->
+
+          <!-- end nghiệp vụ bán hàng -->
+
+          <!-------------------------------------------------------------------- quản lý tài khoản -------------------------------------------------------------------->
+          <!------------------------------------------------------------------- tài khoản nhân viên ------------------------------------------------------------------->
+          <div class="row formtaikhoannhanvien">
+            <section class="col-lg-12">
+              <div class="card">
+                <div class="card-header bg-navy">
+                  <h3 class="card-title"><i class="fas fa-user-plus"></i>&nbsp;Thông tin tài khoản nhân viên</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form class="form-horizontal" enctype="multipart/form-data">
+                        <div class="card-body">
+                          <div class="form-group row row-manhanvien">
+                            <div class="col-sm-12">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Mã nhân viên
+                                <div class="col-sm-12 ">
+                                  <input type="text" class="form-control txtmanv" placeholder="Nhập mã nhân viên"
+                                    readonly>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Họ tên nhân viên <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txthotennv" placeholder="Nhập họ tên nhân viên">
+                              </div>
+                            </div>
+                            <div class="col-sm-3">
+                              <label for="inputEmail3" class="col-sm col-form-label">Giới tính <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <select class="form-control cbgioitinhnv">
+                                  <option value="">Chọn giới tính</option>
+                                  <option value="Nam">Nam</option>
+                                  <option value="Nữ">Nữ</option>
+                                  <option value="Khác">Khác</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-sm-3">
+                              <label for="inputEmail3" class="col-sm-12 col-form-label">Ngày sinh <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="date" class="form-control ngaysinhnv">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Số điện thoại <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtsdtnv" placeholder="Nhập số điện thoại">
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Email <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="email" class="form-control txtemailnv" placeholder="Nhập email">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Tên đăng nhập <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="email" class="form-control txttendangnhapnv"
+                                  placeholder="Nhập tên đăng nhập">
+                              </div>
+                            </div>
+
+                            <div class="col-sm-6 content-matkhaunv">
+                              <label for="inputEmail3" class="col-sm-6 col-form-label">Mật khẩu <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <div class="input-group mb-3">
+                                  <input type="password" class="form-control txtmatkhaunv" id="matkhaunv"
+                                    placeholder="Nhập mật khẩu">
+                                  <div class="input-group-append">
+                                    <div class="input-group-text">
+                                      <span class="fas fa-lock toggle-password" style=" cursor: pointer;"></span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <!-- text input -->
+                              <div class="form-group">
+                                <label class="progresscommonnhanvien"> Ảnh đại diện</label>
+                                <div class="iconimage">
+                                  <input id="imgnhanvien" style="display:none" type="file" accept="image/*" />
+                                  <a href="#">
+                                    <label for="imgnhanvien" class="custom-file-upload" id="imgnhanvien">
+                                      <img width="25px" style="border:0px" src="images/iconuploadimage.png" />Chọn
+                                      ảnh</label>
+                                  </a>
+                                </div>
+                                <div class="col-sm-2 imgnhanvien is-hidden">
+                                  <img src="" id="imgPreviewNhanVien" width="250" height="150">
+                                  <i class="fa fa-trash btndeletefilenhanvien"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+
+                          <button type="button" class="btn btn-info btnthemnv"><i
+                              class="fa-solid fa-file-plus "></i>Thêm</button>&nbsp;
+                          <button type="button" class="btn btn-info btnluunv"><i
+                              class="fa-solid fa-floppy-disk"></i>&nbsp;Lưu</button>&nbsp;
+                          <button type="button" class="btn btn-info btnxoanv"><i
+                              class="fa-solid fa-trash-can "></i>&nbsp;Xóa</button>&nbsp;
+                          <button type="button" class="btn btn-info btnsuanv"><i
+                              class="fa-solid fa-pen-to-square "></i>Sửa</button>
+                          <button type="button" class="btn btn-default float-right btnlamlainv">Làm lại</button>
+                        </div>
+                        <!-- /.card-footer -->
+                      </form>
+                    </div>
+                    <div class="card">
+                      <div class="row">
+                        <div class="card-header col-sm-9">
+                          <h3 class="card-title">Các nhân viên hiện có:</h3>
+                        </div>
+
+                        <div class="card-header col-sm-3">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="form-control txtfindnhanvien" value=""
+                              placeholder='Gõ nội dung cần tìm...'>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- /.card-header -->
+                      <div class="card-body p-0 table-responsive">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã nhân viên</th>
+                              <th>Tên nhân viên</th>
+                              <th>SDT</th>
+                              <th>Email</th>
+                              <th>Tên đăng nhập</th>
+
+                            </tr>
+                          </thead>
+                          <tbody class="addListNhanVien">
+
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="pagenumbernhanvien">
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.card-body -->
+              </div>
+            </section>
+          </div> <!-- end tài khoản nhân viên -->
+
+          <!---------------------------------------------------------------------- tài khoản khách hàng ---------------------------------------------------------------------->
+          <div class="row formtaikhoankhachhang">
+            <section class="col-lg-12">
+              <div class="card">
+                <div class="card-header bg-purple">
+                  <h3 class="card-title"><i class="fas fa-user-circle"></i>&nbsp;Thông tin tài khoản khách hàng</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form class="form-horizontal" enctype="multipart/form-data">
+                        <div class="card-body">
+                          <div class="form-group row row-makhachhang">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm col-form-label">Mã khách hàng</label>
+                              <div class="col-sm ">
+                                <input type="text" class="form-control txtmakh" placeholder="Nhập mã khách hàng"
+                                  readonly>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm col-form-label">Họ tên khách hàng <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm">
+                                <input type="text" class="form-control txthotenkh" placeholder="Nhập họ tên nhân viên">
+                              </div>
+                            </div>
+                            <div class="col-sm-3">
+                              <label for="inputEmail3" class="col-sm col-form-label">Giới tính <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <select class="form-control cbgioitinhkh">
+                                  <option value="">Chọn giới tính</option>
+                                  <option value="Nam">Nam</option>
+                                  <option value="Nữ">Nữ</option>
+                                  <option value="Khác">Khác</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-sm-3">
+                              <label for="inputEmail3" class="col-sm col-form-label">Ngày sinh <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="date" class="form-control ngaysinhkh">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm col-form-label">Số điện thoại <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtsdtkh" placeholder="Nhập số điện thoại">
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm col-form-label">Email <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm-12">
+                                <input type="email" class="form-control txtemailkh" placeholder="Nhập email">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row content-matkhaukh">
+                            <div class="col-sm-6">
+                              <label for="inputEmail3" class="col-sm col-form-label">Mật khẩu <span
+                                  class="batbuocco">*</span></label>
+                              <div class="col-sm">
+                                <div class="input-group mb-12">
+                                  <input type="password" id="matkhaukh" class="form-control txtmatkhaukh"
+                                    placeholder="Nhập mật khẩu">
+                                  <div class="input-group-append">
+                                    <div class="input-group-text">
+                                      <span class="fas fa-lock toggle-password" style=" cursor: pointer;"></span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="inputEmail3" class="col-sm-12 col-form-label">Địa chỉ giao hàng</label>
+                              <div class="col-sm-12">
+                                <input type="text" class="form-control txtdiachigiaohangkh"
+                                  placeholder="Nhập địa chỉ giao hàng">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-sm-12">
+                              <!-- text input -->
+                              <div class="form-group">
+                                <label class="progresscommonkhachhang"> Ảnh đại diện</label>
+                                <div class="iconimage">
+                                  <input id="imgkhachhang" style="display:none" type="file" accept="image/*" />
+                                  <a href="#">
+                                    <label for="imgkhachhang" class="custom-file-upload" id="imgkhachhang">
+                                      <img width="25px" style="border:0px" src="images/iconuploadimage.png" />Chọn
+                                      ảnh</label>
+                                  </a>
+                                </div>
+                                <div class="col-sm-2 imgkhachhang is-hidden">
+                                  <img src="" id="imgPreviewKhachHang" width="250" height="150">
+                                  <i class="fa fa-trash btndeletefilekhachhang"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+
+                          <button type="button" class="btn btn-info btnthemkh"><i
+                              class="fa-solid fa-file-plus "></i>Thêm</button>&nbsp;
+                          <button type="button" class="btn btn-info btnluukh"><i
+                              class="fa-solid fa-floppy-disk"></i>&nbsp;Lưu</button>&nbsp;
+                          <button type="button" class="btn btn-info btnxoakh"><i
+                              class="fa-solid fa-trash-can "></i>&nbsp;Xóa</button>&nbsp;
+                          <button type="button" class="btn btn-info btnsuakh"><i
+                              class="fa-solid fa-pen-to-square "></i>Sửa</button>
+                          <button type="button" class="btn btn-default float-right btnlamlaikh">Làm lại</button>
+                        </div>
+                        <!-- /.card-footer -->
+                      </form>
+                    </div>
+                    <div class="card">
+
+                      <div class="row">
+                        <div class="card-header col-sm-9">
+                          <h3 class="card-title">Các khách hàng hiện có:</h3>
+                        </div>
+
+                        <div class="card-header col-sm-3">
+                          <div class="input-group input-group-sm">
+                            <input type="text" class="form-control txtfindkhachhang"
+                              placeholder='Gõ nội dung cần tìm...'>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <!-- /.card-header -->
+                      <div class="card-body p-0 table-responsive">
+                        <table class="table table-hover">
+
+                          <thead>
+                            <tr>
+                              <th style="width: 10px">#</th>
+                              <th>Mã KH</th>
+                              <th>Tên KH</th>
+                              <th>SDT</th>
+                              <th>Email</th>
+                              <th>ĐC giao hàng</th>
+                            </tr>
+                          </thead>
+                          <tbody class="addListKhachHang">
+                            <tr>
+
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class="pagenumberkhachhang">
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.card-body -->
+              </div>
+            </section>
+          </div> <!-- end tài khoản khách hàng -->
+          <!-- end quản lý tài khoản -->
+
+        </section> <!-- /.content -->
+      </div><!-- /.container-fluid -->
+
+    </div>
+    <!-- /.content-wrapper -->
+    <!--------------------------------------------------------------------- modal đổi mật khẩu --------------------------------------------------------------------->
+    <div class="modal fade showmodalchangematkhau" id="modal-default">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Thay đổi mật khẩu</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <div class="card-body login-card-body">
+
+                <form action="#" method="post">
+
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control txtpassnew" placeholder="Mật khẩu mới">
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-key"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input type="password" class="form-control txtpassnewagain" placeholder="Nhập lại mật khẩu mới">
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-key"></span>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary btn_change_pass">Thay đổi</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- end modal đổi mật khẩu -->
+
+    <!------------------------------------------------------------------ modal chi tiết đơn hàng ------------------------------------------------------------------>
+    <div class="modal fade showmodalchitietdh" id="modal-xl" aria-modal="true" role="dialog">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Chi tiết đơn hàng</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="invoice p-3 mb-3">
+              <!-- title row -->
+              <div class="row">
+                <div class="col-12">
+                  <h4 class="cthd_ngaydh">
+
+                  </h4>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- info row -->
+              <div class="ctdh_manv is-hidden"></div>
+              <div class="ctdh_sodh is-hidden"></div>
+              <div class="row invoice-info">
+                <div class="col-sm-4 invoice-col ctdh_thongtincuahang">
+
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4 invoice-col ctdh_thongtinkhachhang">
+
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-4 invoice-col ctdh_thongtinhoadon">
+
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+
+              <!-- Table row -->
+              <div class="row">
+                <div class="col-12 table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Giảm giá</th>
+                        <th>Thành tiền</th>
+                      </tr>
+                    </thead>
+                    <tbody class="addListSanPhamDH">
+                      <tr>
+
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+
+              <div class="row">
+                <!-- accepted payments column -->
+                <div class="col-6">
+                  <p class="lead">Phương thức thanh toán:</p>
+                  <img src="dist/img/credit/visa.png" alt="Visa">
+                  <img src="dist/img/credit/mastercard.png" alt="Mastercard">
+                  <img src="dist/img/credit/american-express.png" alt="American Express">
+                  <img src="dist/img/credit/paypal2.png" alt="Paypal">
+
+                  <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
+                    Trạng thái đơn hàng
+                  </p>
+                  <div class="col-6 trangthaidh">
+                    <select class="form-control cbtrangthaidh">
+                      <option value="0">Đang xử lý</option>
+                      <option value="1">Giao hàng</option>
+                      <option value="2">Hoàn thành</option>
+                      <option value="3">Huỷ</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-6">
+                  <p class="lead">Tính tiền</p>
+
+                  <div class="table-responsive">
+                    <table class="table">
+                      <tbody class="cthd_tongtien">
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary btn_save_trangthaidh">Save changes</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- end modal chi tiết đơn hàng -->
+
+
+    <!-- /.modal-dialog -->
+    <!--------------------------------------------------------------------------------- footer --------------------------------------------------------------------------------->
+    <footer class="main-footer">
+      <strong>Copyright &copy; 11/2021 <a href="https://nt226-computer.com">nt226-computer.com</a>.</strong>
+      All rights reserved.
+      <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 1
+      </div>
+    </footer>
+    <!------------------------------------------------------------------------------- end footer ------------------------------------------------------------------------------->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+
+    <!-- người dùng -->
+    <!-- Sweetalert -->
+    <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="plugins/sweetalert2/sweetalert2.css">
+    <!-- bootbox alert -->
+    <script src="js/bootbox.min.js"></script>
+
+    <!-- Thư viện lập trình-->
+    <script src="jsuser/main.js"></script>
+    <script src="jsuser/xulytheloai.js"></script>
+    <script src="jsuser/xulythuonghieu.js"></script>
+    <script src="jsuser/xulynhacungcap.js"></script>
+    <script src="jsuser/xulysanpham.js"></script>
+    <script src="jsuser/xulythuonghieusanpham.js"></script>
+    <script src="jsuser/xulytaikhoannhanvien.js"></script>
+    <script src="jsuser/xulytaikhoankhachhang.js"></script>
+    <script src="jsuser/xulyxemdonhang.js"></script>
+    <script src="jsuser/xulybaocaodoanhthu.js"></script>
+    <!-- xử lý hình ảnh -->
+    <script src="spuploadimagestatus/canvas-to-blob.min.js"></script>
+    <script src="spuploadimagestatus/resize.js"></script>
+
+
+    <!-- plugins:js -->
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="vendors/chart.js/Chart.min.js"></script>
+    <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.3/jquery.inputmask.bundle.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="js/jquery.cookie.js" type="text/javascript"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/Chart.roundedBarCharts.js"></script>
+    <script src="js/bootbox.all.js"></script>
+  </body>
+
+</html>
