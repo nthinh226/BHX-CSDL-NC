@@ -1,5 +1,6 @@
 var urlimagenhanvien = "";
 $(document).ready(function () {
+    showDataNhanVien(0, 5);
     var flag = 0;//giả sử người dùng chưa nhấn nút thêm hoặc nút sửa
     $(".btnthemnv").on('click', function () {
         //1.nhấn vào nút thì nút thêm, lưu sáng, sửa mờ
@@ -304,8 +305,9 @@ function showDataNhanVien(page, record) {
         page: page,
         record: record,
         search: find,
-        event: "getALLNV"
-    }
+        event: "getALLNV",
+    };
+    // console.log(dataSendnv);
     queryDataPost_JSON("php/apinhanvien.php", dataSendnv, function (res) {
         if (res.items.length == 0) {
             $(".addListNhanVien").html("<tr><td colnvan=5>Không tìm thấy record</td><tr>");
@@ -314,6 +316,7 @@ function showDataNhanVien(page, record) {
             var stt = printSTT(record, res.page);
             var htmls = '';
             var list = res.items;
+            console.log(list);
             for (var item in list) {
                 var d = list[item];
                 htmls = htmls + '<tr data-manv="' + d.manv +
@@ -324,7 +327,7 @@ function showDataNhanVien(page, record) {
                     '" data-diachi="' + d.diachi +
                     '" data-sdt="' + d.sdt +'">' +
 
-                    '<td>' + stt + '</td>' +
+                    '<td>' + (parseInt(item)+1) + '</td>' +
                     '<td>' + d.manv + '</td>' +
                     '<td>' + d.tennv + '</td>' +
                     '<td>' + d.luong + '</td>' +
@@ -333,10 +336,10 @@ function showDataNhanVien(page, record) {
                     '<td>' + d.diachi + '</td>' +
                     '<td>' + d.sdt + '</td>' +
                     '</tr>';
-                stt++;
+                // stt++;
             }
             $(".addListNhanVien").html(htmls);
-            buildSlidePage($('.pagenumbernhanvien'), 5, res.page, res.totalpage);
+            // buildSlidePage($('.pagenumbernhanvien'), 5, res.page, res.totalpage);
         }
     });
 

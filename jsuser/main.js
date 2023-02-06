@@ -263,6 +263,7 @@ $(document).ready(function () {
 var record = 5; //số dòng hiển thị trong bảng
 /* ---- Hàm truy vấn AJAX ---- */
 function queryDataPost_JSON(url, dataSend, callback) {
+	console.log(dataSend);
 	$.ajax({
 		type: 'POST',
 		url: url,

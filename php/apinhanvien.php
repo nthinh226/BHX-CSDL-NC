@@ -2,7 +2,8 @@
 require_once("server.php");
 date_default_timezone_set('Asia/Ho_Chi_Minh'); // Thay đổi theo múi giờ
 $currentTime = date('d-m-Y h:i:s A', time());
-$event = $_POST['event'];
+// $event = $_POST['event'];
+$event = "getALLNV";
 switch ($event) {
     case "deleteImage":
         $filelinkanh = $_POST['linkdata'];
@@ -132,39 +133,57 @@ switch ($event) {
     case "getALLNV":
         $mang = array();
         //phân trang
-        $record = $_POST['record']; //số dòng sẽ lấy về từ server
-        $page = $_POST['page']; //số số trang mà client
-        $search = $_POST['search']; //Tìm kiếm dữ liệu
-        $vt = $page * $record;  //page=1,record=2
-        $limit = 'limit ' . $vt . ' , ' . $record;
-        $query = "select nv.manv, nv.tennv, nv.luong, nv.gioitinh, nv.loainv, nv.diachi, nv.sdt from nhanvien nv where (nv.manv like '%" . $search . "%' or nv.hotennv like '%" . $search . "%') order by nv.manv asc " . $limit
-        $sql = sqlsrv_query($conn, $query);
-
-        while ($rows = sqlsrv_fetch_array($sql,SQLSRV_FETCH_ASSOC)) {
-            /*
-            hàm mysqli_fetch_array() sẽ tìm và trả về một dòng kết quả 
-            của một truy vấn MySQL nào đó dưới dạng một mảng kết hợp, mảng liên tục hoặc cả hai.
-            */
-
-            $usertemp['manv'] = $rows['manv'];
-            $usertemp['tennv'] = $rows['tennv'];
-            $usertemp['luong'] = $rows['luong'];
-            $usertemp['gioitinh'] = $rows['gioitinh'];
-            $usertemp['loainv'] = $rows['loainv'];
-            $usertemp['diachi'] = $rows['diachi'];
-            $usertemp['sdt'] = $rows['sdt'];
-
-            array_push($mang, $usertemp);
+        // $record = $_POST["record"]; //số dòng sẽ lấy về từ server
+        // $page = $_POST['page']; //số số trang mà client
+        // $search = $_POST['search']; //Tìm kiếm dữ liệu
+        // $vt = $page * $record;  //page=1,record=2
+        // $limit = 'limit ' . $vt . ' , ' . $record;
+        // $query = "select nv.manv, nv.tennv, nv.luong, nv.gioitinh, nv.loainv, nv.diachi, nv.sdt from nhanvien nv where (nv.manv like '%" . $search . "%' or nv.tennv like '%" . $search . "%') order by nv.manv asc " . $limit;
+        $query = "select nv.manv, nv.tennv, nv.luong, nv.gioitinh, nv.loainv, nv.diachi, nv.sdt from nhanvien nv";
+        $stmt = sqlsrv_query($conn, $query,array(), array( "Scrollable" => 'static' ));
+        if (!$stmt) {
+            die(print_r(sqlsrv_errors(), true));
         }
+        header("Content-Type: application/json");
+
+        if (sqlsrv_num_rows($stmt ) > 0) {
+
+            while ($rows = sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)) {
+                /*
+                hàm mysqli_fetch_array() sẽ tìm và trả về một dòng kết quả 
+                của một truy vấn MySQL nào đó dưới dạng một mảng kết hợp, mảng liên tục hoặc cả hai.
+                */
+         
+                
+                $usertemp['manv'] = $rows['manv'];
+                $usertemp['tennv'] = $rows['tennv'];
+                $usertemp['luong'] = $rows['luong'];
+                $usertemp['gioitinh'] = $rows['gioitinh'];
+                $usertemp['loainv'] = $rows['loainv'];
+                $usertemp['diachi'] = $rows['diachi'];
+                $usertemp['sdt'] = $rows['sdt'];
+                array_push($mang, $usertemp);
+            }
+            $jsondata['success'] = 1;
+            $jsondata['items'] = $mang;
+        
+            echo json_encode($jsondata);
+
+        } else {
+            $jsondata['success'] = 0;
+            $jsondata['items'] = $mang;
+            echo json_encode($jsondata);
+        }
+        
         //select s.manv, s.mancc, s.tennv, s.maloai, s.gianv, s.giakhuyenmai, s.mota, s.hinhanhnv, ncc.tenncc, tl.tentl from nhanvien s ,nhacungcap ncc, theloai tl where s.maloai = tl.matl and s.mancc = ncc.mancc and (s.manv like '%" . $search . "%' or s.tennv like '%" . $search . "%') order by s.manv asc "
-        $rs = sqlsrv_query($conn, "select COUNT(*) as 'total' from nhanvien nv where (nv.manv like '%" . $search . "%' or nv.hotennv like '%" . $search . "%') order by nv.manv asc");
-        $row = sqlsrv_fetch_array($rs,SQLSRV_FETCH_ASSOC);
-        $jsonData['total'] = (int)$row['total'];
-        $jsonData['totalpage'] = ceil($row['total'] / $record);
-        $jsonData['page'] = (int)$page;
-        $jsonData['items'] = $mang;
-        echo json_encode($jsonData);
-        mysqli_close($conn);
+        // $rs = sqlsrv_query($conn, "select COUNT(*) as 'total' from nhanvien nv where (nv.manv like '%" . $search . "%' or nv.hotennv like '%" . $search . "%') order by nv.manv asc");
+        // $row = sqlsrv_fetch_array($rs,SQLSRV_FETCH_ASSOC);
+        // $jsonData['total'] = (int)$row['total'];
+        // $jsonData['totalpage'] = ceil($row['total'] / $record);
+        // $jsonData['page'] = (int)$page;
+        // $jsonData['items'] = $mang;
+        // echo json_encode($jsonData);
+        sqlsrv_close($conn);
         break;
     default:
         # code...
