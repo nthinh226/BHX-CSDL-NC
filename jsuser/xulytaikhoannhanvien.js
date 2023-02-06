@@ -2,20 +2,20 @@ var urlimagenhanvien = "";
 $(document).ready(function () {
     showDataNhanVien(0, 5);
     var flag = 0;//giả sử người dùng chưa nhấn nút thêm hoặc nút sửa
-    $(".btnthemnv").on('click', function () {
-        //1.nhấn vào nút thì nút thêm, lưu sáng, sửa mờ
-        $(".btnthemnv").prop("disabled", true);
-        $(".btnluunv").prop("disabled", false);
-        $(".btnsuanv").prop("disabled", true);
-        $(".txtmanv").prop("disabled", false);
-        //2.Xóa các ô text field 
-        resetViewNV();
-        flag = 1;
-        urlimagenhanvien = "";
-        $(".imgnhanvien").addClass("is-hidden");
-        $("#imgnhanvien").val("");
-        document.querySelector("#imgnhanvien").addEventListener('change', initUploadAllCommon);
-    });
+    // $(".btnthemnv").on('click', function () {
+    //     //1.nhấn vào nút thì nút thêm, lưu sáng, sửa mờ
+    //     // $(".btnthemnv").prop("disabled", true);
+    //     // $(".btnluunv").prop("disabled", false);
+    //     // $(".btnsuanv").prop("disabled", true);
+    //     // $(".txtmanv").prop("disabled", false);
+    //     //2.Xóa các ô text field 
+    //     resetViewNV();
+    //     flag = 1;
+    //     // urlimagenhanvien = "";
+    //     // $(".imgnhanvien").addClass("is-hidden");
+    //     // $("#imgnhanvien").val("");
+    //     // document.querySelector("#imgnhanvien").addEventListener('change', initUploadAllCommon);
+    // });
     $(".btnsuanv").on('click', function () {
         //1.nhấn vào nút thì nút thêm, lưu sáng, sửa mờ
         $(".btnthemnv").prop("disabled", true);
@@ -56,121 +56,59 @@ $(document).ready(function () {
             }
         });
     });
-    $(".btnluunv").on('click', function () {
-        if (flag == 1) {
-            //1.Lấy dữ liệu trên form
-            var hotennv = $(".txthotennv").val();
-            var ngaysinhnv = $(".ngaysinhnv").val();
-            var gioitinhnv = $(".cbgioitinhnv").val();
-            var sdtnv = $(".txtsdtnv").val();
-            var emailnv = $(".txtemailnv").val();
-            var tendangnhapnv = $(".txttendangnhapnv").val();
-            var matkhaunv = $(".txtmatkhaunv").val();
+    $(".btnthemnv").on('click', function () {
+        console.log('themnv');
+        var manv = $(".txtmanv").val();
+        var tennv = $(".txttennv").val();
+        var luong = $(".txtluong").val();
+        var gioitinh = $(".txtgioitinh").val();
+        var loainv = $(".txtloainv").val();
+        var diachi = $(".txtdiachi").val();
+        var sdt = $(".txtsdtnv").val();
 
-            if (hotennv == "") {
-                alert_info("Họ tên cấp nhân viên phải khác rỗng");
-            } else if (gioitinhnv == "") {
-                alert_info("Vui lòng chọn giới tính");
-                $(".cbgioitinhnv").focus();
-            } else if (ngaysinhnv == "") {
-                alert_info("Vui lòng nhập ngày sinh");
-                $(".ngaysinhnv").focus();
-            } else if (sdtnv == "") {
-                alert_info("Số điện thoại phải khác rỗng");
-                $(".txtsdtnv").focus();
-            } else if (emailnv == "") {
-                alert_info("Email phải khác rỗng");
-                $(".txtemailnv").focus();
-            } else if (tendangnhapnv == "") {
-                alert_info("tên đăng nhập phải khác rỗng");
-                $(".txttendangnhapnv").focus();
-            } else if (matkhaunv == "") {
-                alert_info("Mật khẩu phải khác rỗng");
-                $(".txtmatkhaunv").focus();
-            } else { ///dữ liệu ta thỏa mản
-                var dataclient = {
-                    hotennv: hotennv,
-                    ngaysinhnv: ngaysinhnv,
-                    gioitinhnv: gioitinhnv,
-                    sdtnv: sdtnv,
-                    emailnv: emailnv,
-                    tendangnhapnv: tendangnhapnv,
-                    matkhaunv: matkhaunv,
-                    avatarnv: urlimagenhanvien,
-                    event: "insertNV"
-                }
-                queryDataPost_JSON("php/apinhanvien.php", dataclient, function (dataserver) {
-                    if (dataserver.success == 2) {
-                        alert_error("Bị trùng khóa");
-                    } else if (dataserver.success == 1) {
-                        showDataNhanVien(0, record);
-                        alert_success("Bạn vừa thêm nhân viên thành công!!");
-                        resetViewNV();
-                        resetButtonNV();
-                        resetThemHinhAnhNV();
-                    } else {
-                        alert_error();
-                    }
-                });
+        if (tennv == "") {
+            alert_info("Họ tên cấp nhân viên phải khác rỗng");
+        } else if (luong == "") {
+            alert_info("Vui lòng nhập lương");
+            $(".txtluong").focus();
+        } else if (gioitinh == "") {
+            alert_info("Vui lòng nhập giới tính");
+            $(".txtgioitinh").focus();
+        } else if (loainv == "") {
+            alert_info("Vui lòng nhập loại nv");
+            $(".txtloainv").focus();
+        } else if (diachi == "") {
+            alert_info("vui lòng nhập địa chỉ");
+            $(".txtdiachi").focus();
+        } else if (sdt == "") {
+            alert_info("vui lòng nhập số điện thoại");
+            $(".txtsdtnv").focus();
+        } else { ///dữ liệu ta thỏa mản
+            var dataclient = {
+                manv: manv,
+                tennv: tennv,
+                luong: luong,
+                gioitinh: gioitinh,
+                loainv: loainv,
+                diachi: diachi,
+                sdt: sdt,
+                MaCN: 'CN_BT_01',
+                event: "insertNV"
             }
-        } else if (flag == 2) {
-            //1.Lấy dữ liệu trên form
-            var manv = $(".txtmanv").val();
-            var hotennv = $(".txthotennv").val();
-            var ngaysinhnv = $(".ngaysinhnv").val();
-            var gioitinhnv = $(".cbgioitinhnv").val();
-            var sdtnv = $(".txtsdtnv").val();
-            var emailnv = $(".txtemailnv").val();
-            var tendangnhapnv = $(".txttendangnhapnv").val();
-
-            if (manv == "") {
-                alert_info("Mã nhân viên phải khác rỗng");
-                $(".txtmanv").focus();
-            } else if (hotennv == "") {
-                alert_info("Họ tên cấp nhân viên phải khác rỗng");
-            } else if (gioitinhnv == "") {
-                alert_info("Vui lòng chọn giới tính");
-                $(".cbgioitinhnv").focus();
-            } else if (ngaysinhnv == "") {
-                alert_info("Vui lòng nhập ngày sinh");
-                $(".ngaysinhnv").focus();
-            } else if (sdtnv == "") {
-                alert_info("Số điện thoại phải khác rỗng");
-                $(".txtsdtnv").focus();
-            } else if (emailnv == "") {
-                alert_info("Email phải khác rỗng");
-                $(".txtemailnv").focus();
-            } else if (tendangnhapnv == "") {
-                alert_info("tên đăng nhập phải khác rỗng");
-                $(".txttendangnhapnv").focus();
-            } else { ///dữ liệu ta thỏa mản
-                var dataclient = {
-                    manv: manv,
-                    hotennv: hotennv,
-                    ngaysinhnv: ngaysinhnv,
-                    gioitinhnv: gioitinhnv,
-                    sdtnv: sdtnv,
-                    emailnv: emailnv,
-                    tendangnhapnv: tendangnhapnv,
-                    avatarnv: urlimagenhanvien,
-                    event: "updateNV"
+            queryDataPost_JSON("php/apinhanvien.php", dataclient, function (dataserver) {
+                if (dataserver.success == 2) {
+                    alert_error("Bị trùng khóa");
+                } else if (dataserver.success == 1) {
+                    showDataNhanVien(0, record);
+                    alert_success("Bạn vừa thêm nhân viên thành công!!");
+                    resetViewNV();
+                    resetButtonNV();
+                    resetThemHinhAnhNV();
+                } else {
+                    alert_error();
                 }
-                queryDataPost_JSON("php/apinhanvien.php", dataclient, function (dataserver) {
-                    if (dataserver.success == 1) {
-                        showDataNhanVien(0, record);
-                        alert_success("Bạn vừa cập nhật nhân viên thành công!!");
-                        resetViewNV();
-                        resetButtonNV();
-                        resetThemHinhAnhNV();
-                    } else {
-                        alert_error();
-                    }
-                });
-            }
-        } else {
-            console.log("bạn chưa thao tác thêm hoặc sửa");
+            });
         }
-    });
     $(".btnxoanv").on('click', function () {
         var manv = $(".txtmanv").val();
         var hotennv = $(".txthotennv").val();
@@ -267,8 +205,8 @@ $(document).ready(function () {
             $("#imgPreviewNhanVien").attr("src", "images/" + avatarnv);
         }
     });
-
-})
+},);
+});
 
 function resetViewNV() {
     $(".row-manhanvien").addClass("is-hidden");
@@ -384,7 +322,3 @@ function xoaHinhAnhNV(urlimagenhanvien) {
     });
 
 }
-
-
-
-

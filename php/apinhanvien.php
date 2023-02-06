@@ -2,8 +2,8 @@
 require_once("server.php");
 date_default_timezone_set('Asia/Ho_Chi_Minh'); // Thay đổi theo múi giờ
 $currentTime = date('d-m-Y h:i:s A', time());
-// $event = $_POST['event'];
-$event = "getALLNV";
+$event = $_POST['event'];
+// $event = "getALLNV";
 switch ($event) {
     case "deleteImage":
         $filelinkanh = $_POST['linkdata'];
@@ -38,37 +38,37 @@ switch ($event) {
         mysqli_close($conn);
         break;
     case "insertNV":
-        // $manv = $_POST['manv'];
-        $hotennv = $_POST['hotennv'];
-        $ngaysinhnv = $_POST['ngaysinhnv'];
-        $gioitinhnv = $_POST['gioitinhnv'];
-        $sdtnv = $_POST['sdtnv'];
-        $emailnv = $_POST['emailnv'];
-        $tendangnhapnv = $_POST['tendangnhapnv'];
-        $matkhaunv = md5($_POST['matkhaunv']);
-        $avatarnv = $_POST['avatarnv'];
+        $manv = $_POST['manv'];
+        $tennv = $_POST['tennv'];
+        $luong = $_POST['luong'];
+        $gioitinh = $_POST['gioitinh'];
+        $loainv = $_POST['loainv'];
+        $diachi = $_POST['diachi'];
+        $sdt = $_POST['sdt'];
+        $MaCN = $_POST['MaCN'];
 
         //tăng số tự động
-        $tang_so_tt = mysqli_query($conn, "SELECT max(ExtractNumber(nv.manv)) AS maxstt from nhanvien nv");
-        $row = mysqli_fetch_array($tang_so_tt);
-        if ($row > 0) {
-            $stt = intval($row['maxstt']);
-            $stt += 1;
-            $manv = "NV" . $stt;
-        } else {
-            $manv = "NV1";
-        }
+        // $tang_so_tt = mysqli_query($conn, "SELECT max(ExtractNumber(nv.manv)) AS maxstt from nhanvien nv");
+        // $row = mysqli_fetch_array($tang_so_tt);
+        // if ($row > 0) {
+        //     $stt = intval($row['maxstt']);
+        //     $stt += 1;
+        //     $manv = "NV" . $stt;
+        // } else {
+        //     $manv = "NV1";
+        // }
         //tăng số tự động
-
-        $rs = mysqli_query($conn, "select COUNT(*) as 'total' from nhanvien where manv='" . $manv . "' ");
-        $row = mysqli_fetch_array($rs);
+        $qr = "select COUNT(*) as 'total' from nhanvien where manv='".$manv."' ";
+        $rs = sqlsrv_query($conn,$qr , array(), array( "Scrollable" => 'static' ));
+        $row = sqlsrv_fetch_array($rs);
+        
         if ((int)$row['total'] > 0) {
             $res["success"] = 2; //{success:2} //đều có nghĩa là đã trùng tên
         } else {
-            $sql = "INSERT INTO nhanvien(manv, hotennv, ngaysinh, gioitinh, sdt, email, tendangnhap, matkhau, avatar) VALUES ('" . $manv . "','" . $hotennv . "','" . $ngaysinhnv . "','" . $gioitinhnv . "','" . $sdtnv . "','" . $emailnv . "','" . $tendangnhapnv . "','" . $matkhaunv . "','" . $avatarnv . "')";
-            if (mysqli_query($conn, $sql)) {
-                if (mysqli_affected_rows($conn) > 0) { //có thay đổi dữ liệu
-                    if (mysqli_affected_rows($conn)) {
+            $sql = "INSERT INTO nhanvien(manv, tennv, luong, gioitinh, loainv, diachi, sdt, MaCN) VALUES ('" . $manv . "','" . $tennv . "','" . $luong . "','" . $gioitinh . "','" . $loainv . "','" . $diachi . "','" . $sdt . "','" . $MaCN . "')";
+            if (sqlsrv_query($conn, $sql, array(), array( "Scrollable" => 'static' ))) {
+                if (sqlsrv_rows_affected($conn) > 0) { //có thay đổi dữ liệu
+                    if (sqlsrv_rows_affected($conn)) {
                         $res["success"] = 1; //Insert dữ liệu thành công
                     } else {
                         $res["success"] = 0; //Không thành công
@@ -81,7 +81,7 @@ switch ($event) {
             }
         }
         echo json_encode($res);
-        mysqli_close($conn);
+        sqlsrv_close($conn);
         break;
     case "updateNV":
         $manv = $_POST['manv'];

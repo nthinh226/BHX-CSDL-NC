@@ -1,6 +1,6 @@
 var urlimagesanpham = ""; //biến lưu tên hình ảnh sản phẩm
 $(document).ready(function () {
-
+    showDataSanPham(0,5);
     var flag = 0;//giả sử người dùng chưa nhấn nút thêm hoặc nút sửa
     $(".btnthemsp").on('click', function () {
         //1.nhấn vào nút thì nút thêm, lưu sáng, sửa mờ
@@ -356,7 +356,7 @@ function showDataSanPham(page, record) {
             var list = res.items;
             for (var item in list) {
                 var d = list[item];
-                htmls = htmls + '<tr data-masp="' + d.mamh +
+                htmls = htmls + '<tr data-mamh="' + d.mamh +
                     '" data-tenmh="' + d.tenmh +
                     '" data-loaimh="' + d.loaimh +
                     '" data-dvtinh="' + d.dvtinh +
@@ -366,9 +366,10 @@ function showDataSanPham(page, record) {
                     '<td>' + d.tenmh + '</td>' +
                     '<td>' + d.loaimh + '</td>' +
                     '<td>' + d.dvtinh + '</td>' +
-                    '<td><img src="images/' + d.hinhanh + '" width="100" height="100"></td>' +
+                '<td data-image="'+d.hinhanh+'" class="text-danger click_image"><img class="img-xs " src="fileanh/'+d.hinhanh+'" alt="Profile image" style ="width:4rem"></td>' +
                     '</tr>';
             }
+
             $(".addListSanPham").html(htmls);
             // buildSlidePage($('.pagenumbersanpham'), 5, res.page, res.totalpage);
         }

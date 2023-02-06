@@ -174,8 +174,8 @@ switch ($event) {
         // $limit = 'limit ' . $vt . ' , ' . $record;
         // $sql = mysqli_query($conn, "select s.*, ncc.tenncc, tl.tentl, th.tenth, th.math from sanpham s, thuonghieusanpham thsp, thuonghieu th, theloai tl, nhacungcap ncc WHERE s.mancc = ncc.mancc and thsp.masanpham = s.masp and th.math = thsp.mathuonghieu and s.maloai = tl.matl");
         // $sql = mysqli_query($conn, "select s.masp, s.mancc, s.tensp, s.maloai, s.giasp, s.giakhuyenmai, s.mota, s.hinhanhsp, ncc.tenncc, tl.tentl from sanpham s ,nhacungcap ncc, theloai tl where s.maloai = tl.matl and s.mancc = ncc.mancc and (s.masp like '%" . $search . "%' or s.tensp like '%" . $search . "%') order by s.masp asc " . $limit);
-        $query = "select s.mamh, s.tenmh, s.loaimh, s.dvtinh, s.hinhanh from sanpham s";
-        $sql = sqlsrv_query($conn,$query,array(), array( "Scrollable" => 'static' ));
+        $query = "select s.mamh, s.tenmh, s.loaimh, s.dvtinh, s.hinhanh from mathang s";
+        $stmt = sqlsrv_query($conn,$query,array(), array( "Scrollable" => 'static' ));
         if (!$stmt) {
             die(print_r(sqlsrv_errors(), true));
         }
@@ -212,8 +212,8 @@ switch ($event) {
         // $jsonData['totalpage'] = ceil($row['total'] / $record);
         // $jsonData['page'] = (int)$page;
         // $jsonData['items'] = $mang;
-        echo json_encode($jsonData);
-        mysqli_close($conn);
+        // echo json_encode($jsonData);
+        sqlsrv_close($conn);
         break;
 
     default:

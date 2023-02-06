@@ -17,6 +17,7 @@ $(document).ready(function () {
 			};
 			
 			queryData('php/apilogin.php', datasend, function (data) {  
+				console.log(data)
 				if (data.success == 1) {
 					var manv = data.items[0].manv;
 					if ($('.remember').is(':checked')) {

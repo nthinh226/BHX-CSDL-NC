@@ -23,36 +23,36 @@ $(document).ready(function () {
 		$('.showmodalthemsanpham').modal('hide');
 	});
 
-	$('.btn_change_pass').click(function () {
-		//var txtpassold=$('.txtpassold').val();
-		var txtpassnew = $('.txtpassnew').val();
-		var txtpassnewagain = $('.txtpassnewagain').val();
-		if (txtpassnew == '' || txtpassnewagain == '') {
-			alert_info('Mật khẩu không được trống');
-		} else if (txtpassnew != txtpassnewagain) {
-			alert_info('Mật khẩu cũ và mới không khớp');
-		} else {
-			var dataSend = {
-				event: 'updatepass',
-				matkhau: txtpassnew,
-				tendangnhap: localStorage.getItem('usernamecomputerstore'),
-			};
-			$('.progesschangepass').html(
-				"<img src='images/loading.gif' width='5px' height='5px'/>"
-			);
+	// $('.btnthemnv').click(function () {
+	// 	//var txtpassold=$('.txtpassold').val();
+	// 	var txtpassnew = $('.txtpassnew').val();
+	// 	var txtpassnewagain = $('.txtpassnewagain').val();
+	// 	if (txtpassnew == '' || txtpassnewagain == '') {
+	// 		alert_info('Mật khẩu không được trống');
+	// 	} else if (txtpassnew != txtpassnewagain) {
+	// 		alert_info('Mật khẩu cũ và mới không khớp');
+	// 	} else {
+	// 		var dataSend = {
+	// 			event: 'updatepass',
+	// 			matkhau: txtpassnew,
+	// 			tendangnhap: localStorage.getItem('usernamecomputerstore'),
+	// 		};
+	// 		$('.progesschangepass').html(
+	// 			"<img src='images/loading.gif' width='5px' height='5px'/>"
+	// 		);
 
-			queryDataPost_JSON('php/apinhanvien.php', dataSend, function (res) {
-				if (res['updatepass'] == 1) {
-					alert_success('Thay đổi mật khẩu thành công');
-					$('.showmodalchangematkhau').modal('hide');
-				} else {
-					alert_info('Thay đổi mật khẩu thất bại');
-				}
+	// 		queryDataPost_JSON('php/apinhanvien.php', dataSend, function (res) {
+	// 			if (res['updatepass'] == 1) {
+	// 				alert_success('Thay đổi mật khẩu thành công');
+	// 				$('.showmodalchangematkhau').modal('hide');
+	// 			} else {
+	// 				alert_info('Thay đổi mật khẩu thất bại');
+	// 			}
 
-				$('.progesschangepass').html('');
-			});
-		}
-	});
+	// 			$('.progesschangepass').html('');
+	// 		});
+	// 	}
+	// });
 	// ẩn các table và chỉ hiện khi nhấn vào mục sidebar tương ứng
 	// ban đầu chạy trang chủ
 	swapMain('formtrangchu');
@@ -285,7 +285,7 @@ function queryDataPost_JSON(url, dataSend, callback) {
 		dataType: 'json',
 		success: callback,
 		error: function (jqXHR, textStatus, errorThrown) {
-			console.log(jqXHR.responseText);
+			// console.log(jqXHR.responseText);
 		},
 	});
 }

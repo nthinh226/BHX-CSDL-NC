@@ -46,7 +46,7 @@ if (sqlsrv_num_rows($stmt ) > 0) {
     $connectionInfo = array( "Database"=>"DB_BinhThanh", "UID"=>"sa", "PWD"=>"0","CharacterSet" =>"UTF-8");
     $conn = sqlsrv_connect( $serverName, $connectionInfo);
         if ( $conn ) {
-            echo "Connection established.";
+            // echo "Connection established.";
         } else{
         die( print_r( sqlsrv_errors(), true));
     }
