@@ -12,6 +12,11 @@ $(document).ready(function () {
 		$('.showmodalthemnhanvien').modal('show');
 	});
 
+	$('.btnthemsanpham').click(function () {
+		
+		$('.showmodalthemsanpham').modal('show');
+	});
+
 	$('.btn_change_pass').click(function () {
 		//var txtpassold=$('.txtpassold').val();
 		var txtpassnew = $('.txtpassnew').val();
