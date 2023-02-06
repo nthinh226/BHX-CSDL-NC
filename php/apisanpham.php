@@ -212,7 +212,7 @@ switch ($event) {
         // $jsonData['totalpage'] = ceil($row['total'] / $record);
         // $jsonData['page'] = (int)$page;
         // $jsonData['items'] = $mang;
-        echo json_encode($jsonData);
+        // echo json_encode($jsonData);
         mysqli_close($conn);
         break;
 
