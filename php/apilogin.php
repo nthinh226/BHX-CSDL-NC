@@ -7,13 +7,15 @@ $tendangnhap = $_POST['tendangnhap'];
 
 
 // SELECT query
-$sql = "select * from nhanvien where sdt='$tendangnhap'";
+$sql = "select * from nhanvien where sdt='".$tendangnhap."'";
 $stmt = sqlsrv_query($conn, $sql, array(), array( "Scrollable" => 'static' ));
 // Check for errors
 if (!$stmt) {
     die(print_r(sqlsrv_errors(), true));
 }
-echo(sqlsrv_num_rows($stmt ));
+// echo(sqlsrv_num_rows($stmt ));
+
+header("Content-Type: application/json");
 
 if (sqlsrv_num_rows($stmt ) > 0) {
 
@@ -26,7 +28,9 @@ if (sqlsrv_num_rows($stmt ) > 0) {
     }
     $jsondata['success'] = 1;
     $jsondata['items'] = $mang;
+
     echo json_encode($jsondata);
+
 } else {
     $jsondata['success'] = 0;
     $jsondata['items'] = $mang;

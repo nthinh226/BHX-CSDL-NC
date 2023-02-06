@@ -1,5 +1,4 @@
 $(document).ready(function () {
-	console.log('first')
 	var myUser = JSON.parse(localStorage.getItem('usercomputerstore'));
 	if (myUser != null || myUser != undefined) {
 		var r = localStorage.getItem('remembercomputerstore');
@@ -16,7 +15,8 @@ $(document).ready(function () {
 				tendangnhap: tendangnhap,
 				matkhau: '1',
 			};
-			queryData('php/apilogin.php', datasend, function (data) {
+			
+			queryData('php/apilogin.php', datasend, function (data) {  
 				if (data.success == 1) {
 					var manv = data.items[0].manv;
 					if ($('.remember').is(':checked')) {
@@ -48,5 +48,8 @@ function queryData(url, dataSend, callback) {
 		async: true,
 		dataType: 'json',
 		success: callback,
+		error: function(jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR.responseText);
+		}
 	});
 }

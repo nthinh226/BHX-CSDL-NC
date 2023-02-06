@@ -14,7 +14,7 @@
 // }
 
 $serverName = "DESKTOP-H3U5N9G"; 
-$connectionInfo = array( "Database"=>"DB_BinhThanh", "UID"=>"sa", "PWD"=>"0");
+$connectionInfo = array( "Database"=>"DB_BinhThanh", "UID"=>"sa", "PWD"=>"0","CharacterSet" =>"UTF-8");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 if( $conn ) {
@@ -34,9 +34,9 @@ if( $conn ) {
 // echo json_encode($row);
 // print_r($row);
 
-     echo "Connection established.";
+     // echo "Connection established.";
 }else{
-     echo "Connection could not be established.";
+     // echo "Connection could not be established.";
      die( print_r( sqlsrv_errors(), true));
 }
 ?>
