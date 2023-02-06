@@ -16,6 +16,13 @@ $(document).ready(function () {
 		$('.showmodalthemnhanvien').modal('hide');
 	});
 
+	$('.btnthemsanpham').click(function () {
+		$('.showmodalthemsanpham').modal('show');
+	});
+	$('.btnclose').click(function () {
+		$('.showmodalthemsanpham').modal('hide');
+	});
+
 	$('.btn_change_pass').click(function () {
 		//var txtpassold=$('.txtpassold').val();
 		var txtpassnew = $('.txtpassnew').val();

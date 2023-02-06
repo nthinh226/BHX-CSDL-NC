@@ -493,7 +493,8 @@
                               <div>
                                 <div class="btn-wrapper">
 
-                                  <a href="#" class="btn btn-primary text-white me-0" style="background-color:orange;">
+                                  <a href="#" class="btn btn-primary text-white me-0 btnthemsanpham"
+                                    style="background-color:orange;">
                                     Thêm Sản Phẩm</a>
                                   <a href="#" class="btn btn-primary text-white me-0"
                                     style="background-color:orange;"><i class="icon-download"></i> EXCEL I/E</a>
@@ -602,26 +603,26 @@
                                             </div>
                                           </div>
                                           <div class="table-responsive">
-                                              <table class="table table-hover">
+                                            <table class="table table-hover">
 
-                                                <thead style="background-color:Orange;">
-                                                  <tr style="color:white; font-size: 14px;">
-                                                    <th> STT</th>
-                                                    <th>| Mã NV</th>
-                                                    <th>| Tên</th>
-                                                    <th>| Lương</th>
-                                                    <th>| Giới Tính</th>
-                                                    <th>| Loai Nv</th>
-                                                    <th>| Địa chỉ</th>
-                                                    <th>| Số điện thoại</th>
-                                                  </tr>
-                                                </thead>
+                                              <thead style="background-color:Orange;">
+                                                <tr style="color:white; font-size: 14px;">
+                                                  <th> STT</th>
+                                                  <th>| Mã NV</th>
+                                                  <th>| Tên</th>
+                                                  <th>| Lương</th>
+                                                  <th>| Giới Tính</th>
+                                                  <th>| Loai Nv</th>
+                                                  <th>| Địa chỉ</th>
+                                                  <th>| Số điện thoại</th>
+                                                </tr>
+                                              </thead>
 
-                                                <tbody class="addListNhanVien">
-                                                  <tr>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
+                                              <tbody class="addListNhanVien">
+                                                <tr>
+                                                </tr>
+                                              </tbody>
+                                            </table>
                                           </div>
                                           <!-- <div class="pagenumbernhanvien"></div> -->
                                         </div>
@@ -2099,6 +2100,77 @@
       </div>
     </div>
     <!-- end modal đổi mật khẩu -->
+
+    <!-------------------------------------------------------modal them san pham----------------------------------------------------- -->
+    <div class="modal fade showmodalthemsanpham" id="modal-default">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Thêm sản phẩm</h4>
+            <button type="button" class="close btnclose" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <div class="tab-content tab-content-basic">
+                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
+
+                  <div class="row">
+                    <div class="col-lg-12 d-flex flex-column">
+                      <div class="row flex-grow">
+                        <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                          <div class="card card-rounded">
+                            <div style="display: flex">
+
+                              <div class="card-body" style="position: relative;">
+                                <a class=""
+                                  style="margin-left: 150px; margin-top: 60px; position: absolute; text-decoration: none;cursor: pointer; color: black; font-weight: bold;">
+                                  <img src="images/add-img-black.png" style="width: 30px; margin-left: 50px; "></img>
+                                  <p style=" margin-top: 10px;">Tải lên ảnh sản phẩm</p>
+                                </a>
+                                </p>
+                              </div>
+                              <div class="card-body">
+                                <form class="form-group">
+                                  <label>Tên</label>
+                                  <input type="text" class="form-control txtmanv" id="exampleInputName1" placeholder="">
+
+                                  <label>Loại:
+                                  </label>
+                                  <input type="text" class="form-control txttennv" id="exampleInputEmail3"
+                                    placeholder="">
+                                  <label>Giá:
+                                  </label>
+                                  <input type="text" class="form-control txtdiachinv" id="exampleInputEmail3"
+                                    placeholder="">
+                                </form>
+                              </div>
+                            </div>
+                            <p style="margin-left: 20px; font-weight: bold;">Mô tả:</p>
+                            <div class="card-body"><textarea style="width: 100%; height: 400px; border: 1px solid wheat"
+                                placeholder="Decription..."></textarea></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default btnclose" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary btn_change_pass">Thêm</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- end modal them san pham -->
+
     <!--------------------------------------------------------------------- modal them nhan vien --------------------------------------------------------------------->
     <div class="modal fade showmodalthemnhanvien" id="modal-default">
       <div class="modal-dialog modal-xl">
