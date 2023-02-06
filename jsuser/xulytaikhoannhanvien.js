@@ -317,21 +317,21 @@ function showDataNhanVien(page, record) {
             for (var item in list) {
                 var d = list[item];
                 htmls = htmls + '<tr data-manv="' + d.manv +
-                    '" data-hotennv="' + d.hotennv +
-                    '" data-ngaysinhnv="' + d.ngaysinhnv +
-                    '" data-gioitinhnv="' + d.gioitinhnv +
-                    '" data-sdtnv="' + d.sdtnv +
-                    '" data-emailnv="' + d.emailnv +
-                    '" data-tendangnhapnv="' + d.tendangnhapnv +
-                    '" data-matkhaunv="' + d.matkhaunv +
-                    '" data-avatarnv="' + d.avatarnv + '">' +
+                    '" data-tennv="' + d.tennv +
+                    '" data-luong="' + d.luong +
+                    '" data-gioitinh="' + d.gioitinh +
+                    '" data-loainv="' + d.loainv +
+                    '" data-diachi="' + d.diachi +
+                    '" data-sdt="' + d.sdt +'">' +
 
                     '<td>' + stt + '</td>' +
                     '<td>' + d.manv + '</td>' +
-                    '<td>' + d.hotennv + '</td>' +
-                    '<td>' + d.sdtnv + '</td>' +
-                    '<td>' + d.emailnv + '</td>' +
-                    '<td>' + d.tendangnhapnv + '</td>' +
+                    '<td>' + d.tennv + '</td>' +
+                    '<td>' + d.luong + '</td>' +
+                    '<td>' + d.gioitinh + '</td>' +
+                    '<td>' + d.loainv + '</td>' +
+                    '<td>' + d.diachi + '</td>' +
+                    '<td>' + d.sdt + '</td>' +
                     '</tr>';
                 stt++;
             }

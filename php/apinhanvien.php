@@ -137,29 +137,28 @@ switch ($event) {
         $search = $_POST['search']; //Tìm kiếm dữ liệu
         $vt = $page * $record;  //page=1,record=2
         $limit = 'limit ' . $vt . ' , ' . $record;
-        $sql = mysqli_query($conn, "select nv.manv, nv.hotennv, nv.ngaysinh, nv.gioitinh, nv.sdt, nv.email, nv.tendangnhap, nv.matkhau, nv.avatar from nhanvien nv where (nv.manv like '%" . $search . "%' or nv.hotennv like '%" . $search . "%') order by nv.manv asc " . $limit);
+        $query = "select nv.manv, nv.tennv, nv.luong, nv.gioitinh, nv.loainv, nv.diachi, nv.sdt from nhanvien nv where (nv.manv like '%" . $search . "%' or nv.hotennv like '%" . $search . "%') order by nv.manv asc " . $limit
+        $sql = sqlsrv_query($conn, $query);
 
-        while ($rows = mysqli_fetch_array($sql)) {
+        while ($rows = sqlsrv_fetch_array($sql,SQLSRV_FETCH_ASSOC)) {
             /*
             hàm mysqli_fetch_array() sẽ tìm và trả về một dòng kết quả 
             của một truy vấn MySQL nào đó dưới dạng một mảng kết hợp, mảng liên tục hoặc cả hai.
             */
 
             $usertemp['manv'] = $rows['manv'];
-            $usertemp['hotennv'] = $rows['hotennv'];
-            $usertemp['ngaysinhnv'] = $rows['ngaysinh'];
-            $usertemp['gioitinhnv'] = $rows['gioitinh'];
-            $usertemp['sdtnv'] = $rows['sdt'];
-            $usertemp['emailnv'] = $rows['email'];
-            $usertemp['tendangnhapnv'] = $rows['tendangnhap'];
-            $usertemp['matkhaunv'] = $rows['matkhau'];
-            $usertemp['avatarnv'] = $rows['avatar'];
+            $usertemp['tennv'] = $rows['tennv'];
+            $usertemp['luong'] = $rows['luong'];
+            $usertemp['gioitinh'] = $rows['gioitinh'];
+            $usertemp['loainv'] = $rows['loainv'];
+            $usertemp['diachi'] = $rows['diachi'];
+            $usertemp['sdt'] = $rows['sdt'];
 
             array_push($mang, $usertemp);
         }
         //select s.manv, s.mancc, s.tennv, s.maloai, s.gianv, s.giakhuyenmai, s.mota, s.hinhanhnv, ncc.tenncc, tl.tentl from nhanvien s ,nhacungcap ncc, theloai tl where s.maloai = tl.matl and s.mancc = ncc.mancc and (s.manv like '%" . $search . "%' or s.tennv like '%" . $search . "%') order by s.manv asc "
-        $rs = mysqli_query($conn, "select COUNT(*) as 'total' from nhanvien nv where (nv.manv like '%" . $search . "%' or nv.hotennv like '%" . $search . "%') order by nv.manv asc");
-        $row = mysqli_fetch_array($rs);
+        $rs = sqlsrv_query($conn, "select COUNT(*) as 'total' from nhanvien nv where (nv.manv like '%" . $search . "%' or nv.hotennv like '%" . $search . "%') order by nv.manv asc");
+        $row = sqlsrv_fetch_array($rs,SQLSRV_FETCH_ASSOC);
         $jsonData['total'] = (int)$row['total'];
         $jsonData['totalpage'] = ceil($row['total'] / $record);
         $jsonData['page'] = (int)$page;
@@ -167,7 +166,6 @@ switch ($event) {
         echo json_encode($jsonData);
         mysqli_close($conn);
         break;
-
     default:
         # code...
         break;

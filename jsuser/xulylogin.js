@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	console.log('first')
 	var myUser = JSON.parse(localStorage.getItem('usercomputerstore'));
 	if (myUser != null || myUser != undefined) {
 		var r = localStorage.getItem('remembercomputerstore');
@@ -16,7 +17,6 @@ $(document).ready(function () {
 				matkhau: '1',
 			};
 			queryData('php/apilogin.php', datasend, function (data) {
-				console.log(data);
 				if (data.success == 1) {
 					var manv = data.items[0].manv;
 					if ($('.remember').is(':checked')) {

@@ -1,21 +1,27 @@
 <?php
 require_once("server.php"); //add code php file server vào trong file api.php
 $mang = array();
+
+// $tendangnhap = "0837560022";
 $tendangnhap = $_POST['tendangnhap'];
-// $matkhau = md5($_POST['matkhau']);
-$rs = mysqli_query($conn, "select * from nhanvien where  sdt='" . $tendangnhap . "'");
-if (mysqli_num_rows($rs) > 0) {
-    while ($rows = mysqli_fetch_array($rs)) {
-        $usertemp['manv'] = $rows['manv'];
-        $usertemp['hotennv'] = $rows['hotennv'];
-        $usertemp['ngaysinh'] = $rows['ngaysinh'];
-        $usertemp['gioitinh'] = $rows['gioitinh'];
-        $usertemp['sdt'] = $rows['sdt'];
-        $usertemp['email'] = $rows['email'];
-        $usertemp['tendangnhap'] = $rows['tendangnhap'];
-        $usertemp['matkhau'] = $rows['matkhau'];
-        $usertemp['avatar'] = $rows['avatar'];
-        $usertemp['quyen'] = $rows['quyen'];
+
+
+// SELECT query
+$sql = "select * from nhanvien where sdt='$tendangnhap'";
+$stmt = sqlsrv_query($conn, $sql, array(), array( "Scrollable" => 'static' ));
+// Check for errors
+if (!$stmt) {
+    die(print_r(sqlsrv_errors(), true));
+}
+echo(sqlsrv_num_rows($stmt ));
+
+if (sqlsrv_num_rows($stmt ) > 0) {
+
+    while ($rows = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+        $usertemp['manv'] = $rows['MaNV'];
+        $usertemp['hotennv'] = $rows['TenNV'];
+        $usertemp['sdt'] = $rows['SDT'];
+        $usertemp['macn'] = $rows['MaCN'];
         array_push($mang, $usertemp);
     }
     $jsondata['success'] = 1;
@@ -26,4 +32,4 @@ if (mysqli_num_rows($rs) > 0) {
     $jsondata['items'] = $mang;
     echo json_encode($jsondata);
 }
-mysqli_close($conn);
+sqlsrv_close($conn);
