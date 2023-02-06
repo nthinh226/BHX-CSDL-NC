@@ -2,7 +2,8 @@
 require_once("server.php");
 date_default_timezone_set('Asia/Ho_Chi_Minh'); // Thay đổi theo múi giờ
 $currentTime = date('d-m-Y h:i:s A', time());
-$event = $_POST['event'];
+// $event = $_POST['event'];
+$event = "getALLSP";
 switch ($event) {
     case "deleteImage":
         $filelinkanh = $_POST['linkdata'];
@@ -166,50 +167,51 @@ switch ($event) {
     case "getALLSP":
         $mang = array();
         //phân trang
-        $record = $_POST['record']; //số dòng sẽ lấy về từ server
-        $page = $_POST['page']; //số số trang mà client
-        $search = $_POST['search']; //Tìm kiếm dữ liệu
-        $vt = $page * $record;  //page=1,record=2
-        $limit = 'limit ' . $vt . ' , ' . $record;
+        // $record = $_POST['record']; //số dòng sẽ lấy về từ server
+        // $page = $_POST['page']; //số số trang mà client
+        // $search = $_POST['search']; //Tìm kiếm dữ liệu
+        // $vt = $page * $record;  //page=1,record=2
+        // $limit = 'limit ' . $vt . ' , ' . $record;
         // $sql = mysqli_query($conn, "select s.*, ncc.tenncc, tl.tentl, th.tenth, th.math from sanpham s, thuonghieusanpham thsp, thuonghieu th, theloai tl, nhacungcap ncc WHERE s.mancc = ncc.mancc and thsp.masanpham = s.masp and th.math = thsp.mathuonghieu and s.maloai = tl.matl");
-        $sql = mysqli_query($conn, "select s.masp, s.mancc, s.tensp, s.maloai, s.giasp, s.giakhuyenmai, s.mota, s.hinhanhsp, ncc.tenncc, tl.tentl from sanpham s ,nhacungcap ncc, theloai tl where s.maloai = tl.matl and s.mancc = ncc.mancc and (s.masp like '%" . $search . "%' or s.tensp like '%" . $search . "%') order by s.masp asc " . $limit);
+        // $sql = mysqli_query($conn, "select s.masp, s.mancc, s.tensp, s.maloai, s.giasp, s.giakhuyenmai, s.mota, s.hinhanhsp, ncc.tenncc, tl.tentl from sanpham s ,nhacungcap ncc, theloai tl where s.maloai = tl.matl and s.mancc = ncc.mancc and (s.masp like '%" . $search . "%' or s.tensp like '%" . $search . "%') order by s.masp asc " . $limit);
+        $query = "select s.mamh, s.tenmh, s.loaimh, s.dvtinh, s.hinhanh from sanpham s";
+        $sql = sqlsrv_query($conn,$query,array(), array( "Scrollable" => 'static' ));
+        if (!$stmt) {
+            die(print_r(sqlsrv_errors(), true));
+        }
 
-        while ($rows = mysqli_fetch_array($sql)) {
-            //thuonghieusanpham
-            /*
-            hàm mysqli_fetch_array() sẽ tìm và trả về một dòng kết quả 
-            của một truy vấn MySQL nào đó dưới dạng một mảng kết hợp, mảng liên tục hoặc cả hai.
-            */
-            $sqlth = mysqli_query($conn, "select thsp.mathuonghieu, thsp.masanpham, th.tenth from thuonghieusanpham thsp, thuonghieu th where thsp.mathuonghieu = th.math and thsp.masanpham = '" . $rows['masp'] . "'");
+        header("Content-Type: application/json");
 
-            if ($rowth = mysqli_fetch_array($sqlth)) {
-                $usertemp['mathsp'] = $rowth['mathuonghieu'];
-                $usertemp['tenthsp'] = $rowth['tenth'];
-            } else {
-                $usertemp['mathsp'] = null;
-                $usertemp['tenthsp'] = null;
+        if (sqlsrv_num_rows($stmt ) > 0) {
+            while ($rows = sqlsrv_fetch_array($stmt,SQLSRV_FETCH_ASSOC)) {
+                //thuonghieusanpham
+                /*
+                hàm mysqli_fetch_array() sẽ tìm và trả về một dòng kết quả 
+                của một truy vấn MySQL nào đó dưới dạng một mảng kết hợp, mảng liên tục hoặc cả hai.
+                */
+
+                $usertemp['mamh'] = $rows['mamh'];
+                $usertemp['tenmh'] = $rows['tenmh'];
+                $usertemp['loaimh'] = $rows['loaimh'];
+                $usertemp['dvtinh'] = $rows['dvtinh'];
+                $usertemp['hinhanh'] = $rows['hinhanh'];
+                array_push($mang, $usertemp);
             }
-
-            $usertemp['masp'] = $rows['masp'];
-            $usertemp['manccsp'] = $rows['mancc'];
-            $usertemp['tennccsp'] = $rows['tenncc'];
-            $usertemp['tensp'] = $rows['tensp'];
-            $usertemp['maloaisp'] = $rows['maloai'];
-            $usertemp['tentlsp'] = $rows['tentl'];
-            $usertemp['giasp'] = $rows['giasp'];
-            $usertemp['giakhuyenmaisp'] = $rows['giakhuyenmai'];
-            $usertemp['motasp'] = $rows['mota'];
-            $usertemp['hinhanhsp'] = $rows['hinhanhsp'];
-
-            array_push($mang, $usertemp);
+            $jsondata['success'] = 1;
+            $jsondata['items'] = $mang;
+            echo json_encode($jsondata);
+        } else {
+            $jsondata['success'] = 0;
+            $jsondata['items'] = $mang;
+            echo json_encode($jsondata);
         }
         //select s.masp, s.mancc, s.tensp, s.maloai, s.giasp, s.giakhuyenmai, s.mota, s.hinhanhsp, ncc.tenncc, tl.tentl from sanpham s ,nhacungcap ncc, theloai tl where s.maloai = tl.matl and s.mancc = ncc.mancc and (s.masp like '%" . $search . "%' or s.tensp like '%" . $search . "%') order by s.masp asc "
-        $rs = mysqli_query($conn, "select COUNT(*) as 'total' from sanpham s ,nhacungcap ncc, theloai tl where s.maloai = tl.matl and s.mancc = ncc.mancc and (s.masp like '%" . $search . "%' or s.tensp like '%" . $search . "%') order by s.masp asc");
-        $row = mysqli_fetch_array($rs);
-        $jsonData['total'] = (int)$row['total'];
-        $jsonData['totalpage'] = ceil($row['total'] / $record);
-        $jsonData['page'] = (int)$page;
-        $jsonData['items'] = $mang;
+        // $rs = mysqli_query($conn, "select COUNT(*) as 'total' from sanpham s ,nhacungcap ncc, theloai tl where s.maloai = tl.matl and s.mancc = ncc.mancc and (s.masp like '%" . $search . "%' or s.tensp like '%" . $search . "%') order by s.masp asc");
+        // $row = mysqli_fetch_array($rs);
+        // $jsonData['total'] = (int)$row['total'];
+        // $jsonData['totalpage'] = ceil($row['total'] / $record);
+        // $jsonData['page'] = (int)$page;
+        // $jsonData['items'] = $mang;
         echo json_encode($jsonData);
         mysqli_close($conn);
         break;

@@ -352,39 +352,25 @@ function showDataSanPham(page, record) {
             $(".addListSanPham").html("<tr><td colspan=5>Không tìm thấy record</td><tr>");
             $('.pagenumbersanpham').html("");
         } else {
-            var stt = printSTT(record, res.page);
             var htmls = '';
             var list = res.items;
             for (var item in list) {
                 var d = list[item];
-                htmls = htmls + '<tr data-masp="' + d.masp +
-                    '" data-manccsp="' + d.manccsp +
-                    '" data-tennccsp="' + d.tennccsp +
-                    '" data-tensp="' + d.tensp +
-                    '" data-maloaisp="' + d.maloaisp +
-                    '" data-tentlsp="' + d.tentlsp +
-                    '" data-giasp="' + d.giasp +
-                    '" data-giakhuyenmaisp="' + d.giakhuyenmaisp +
-                    '" data-motasp="' + d.motasp +
-                    '" data-mathsp="' + d.mathsp +
-                    '" data-tenthsp="' + d.tenthsp +
-                    '" data-hinhanhsp="' + d.hinhanhsp + '">' +
+                htmls = htmls + '<tr data-masp="' + d.mamh +
+                    '" data-tenmh="' + d.tenmh +
+                    '" data-loaimh="' + d.loaimh +
+                    '" data-dvtinh="' + d.dvtinh +
+                    '" data-hinhanh="' + d.hinhanh + '">' +
 
-                    '<td>' + stt + '</td>' +
-                    '<td>' + d.masp + '</td>' +
-                    // '<td>' + d.tentlsp + '</td>' +
-                    // '<td>' + d.tenthsp + '</td>' +
-                    // '<td>' + d.tennccsp + '</td>' +
-                    '<td>' + d.tensp + '</td>' +
-                    '<td>' + d.giasp + '</td>' +
-                    '<td>' + d.giakhuyenmaisp + '</td>' +
-                    '<td>' + d.motasp + '</td>' +
-                    '<td><img src="images/' + d.hinhanhsp + '" width="100" height="100"></td>' +
+                    '<td>' + d.mamh + '</td>' +
+                    '<td>' + d.tenmh + '</td>' +
+                    '<td>' + d.loaimh + '</td>' +
+                    '<td>' + d.dvtinh + '</td>' +
+                    '<td><img src="images/' + d.hinhanh + '" width="100" height="100"></td>' +
                     '</tr>';
-                stt++;
             }
             $(".addListSanPham").html(htmls);
-            buildSlidePage($('.pagenumbersanpham'), 5, res.page, res.totalpage);
+            // buildSlidePage($('.pagenumbersanpham'), 5, res.page, res.totalpage);
         }
     });
 
