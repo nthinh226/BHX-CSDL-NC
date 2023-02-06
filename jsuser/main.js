@@ -520,6 +520,8 @@ function buildUserDropdown() {
 		} else {
 			$('.addavatar').attr('src', 'images/' + avatar);
 		}
+		var macn = myUser.items[0].macn
+		$('.chinhanh').html('Chi nhánh: ' + macn)
 		//phân quyềN
 		if (quyen == 1) {
 			$('.form-horizontal').addClass('is-hidden');

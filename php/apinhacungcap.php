@@ -2,7 +2,9 @@
 require_once("server.php");
 date_default_timezone_set('Asia/Ho_Chi_Minh'); // Thay đổi theo múi giờ
 $currentTime = date('d-m-Y h:i:s A', time());
-$event = $_POST['event'];
+// $event = $_POST['event'];
+$event = 'getALLNCC';
+
 switch ($event) {
     case "insertNCC":
         $mancc = $_POST['mancc'];
@@ -29,7 +31,7 @@ switch ($event) {
             }
         }
         echo json_encode($res);
-        mysqli_close($conn);
+        sqlsrv_close($conn);
         break;
 
     case "updateNCC":
@@ -50,7 +52,7 @@ switch ($event) {
             $res["success"] = 0; //Không thành công
         }
         echo json_encode($res);
-        mysqli_close($conn);
+        sqlsrv_close($conn);
         break;
 
     case "deleteNCC":
@@ -72,22 +74,22 @@ switch ($event) {
             }
         }
         echo json_encode($res);
-        mysqli_close($conn);
+        sqlsrv_close($conn);
         break;
 
     case "getALLNCC":
         $mang = array();
         $sql = sqlsrv_query($conn, "select * from nhacungcap");
         while ($rows = sqlsrv_fetch_array($sql)) {
-            $usertemp['mancc'] = $rows['mancc'];
-            $usertemp['tenncc'] = $rows['tenncc'];
-            $usertemp['diachincc'] = $rows['diachi'];
-            $usertemp['sdtncc'] = $rows['sdt'];
+            $usertemp['mancc'] = $rows['MaNCC'];
+            $usertemp['tenncc'] = $rows['TenNCC'];
+            $usertemp['diachincc'] = $rows['DiaChi'];
+            $usertemp['sdtncc'] = $rows['SDT'];
             array_push($mang, $usertemp);
         }
         $jsonData['items'] = $mang;
         echo json_encode($jsonData);
-        mysqli_close($conn);
+        sqlsrv_close($conn);
         break;
 
     default:
