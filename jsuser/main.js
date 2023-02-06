@@ -7,6 +7,11 @@ $(document).ready(function () {
 	$('.btn_change_matkhau').click(function () {
 		$('.showmodalchangematkhau').modal('show');
 	});
+
+	$('.btnthemnhanvien').click(function () {
+		$('.showmodalthemnhanvien').modal('show');
+	});
+
 	$('.btn_change_pass').click(function () {
 		//var txtpassold=$('.txtpassold').val();
 		var txtpassnew = $('.txtpassnew').val();
@@ -45,13 +50,48 @@ $(document).ready(function () {
 	$('.menutrangchu').click(function () {
 		console.log('abc');
 		$('.titlestatus').html(
-			' <li class="breadcrumb-item"><a href="#">' +
-				$(this).parents('.danhmuc').children('.tendanhmuc').text() +
+			' <li class="breadcrumb-item"><a href="#"> Trang chủ ' +
 				'</a></li><li class="breadcrumb-item active">' +
 				$(this).text() +
 				'</li>'
 		);
 		swapMain('formtrangchu');
+	});
+
+	// ke luong
+	$('.menukeluong').click(function () {
+		console.log('abc');
+		$('.titlestatus').html(
+			' <li class="breadcrumb-item"><a href="#">Trang chủ ' +
+				'</a></li><li class="breadcrumb-item active">' +
+				$(this).text() +
+				'</li>'
+		);
+		swapMain('formkeluong');
+	});
+
+	// nhanvien
+	$('.menunhanvien').click(function () {
+		console.log('abc');
+		$('.titlestatus').html(
+			' <li class="breadcrumb-item"><a href="#">Trang chủ ' +
+				'</a></li><li class="breadcrumb-item active">' +
+				$(this).text() +
+				'</li>'
+		);
+		swapMain('formnhanvien');
+	});
+
+	// dathang
+	$('.menudathang').click(function () {
+		console.log('abc');
+		$('.titlestatus').html(
+			' <li class="breadcrumb-item"><a href="#">Trang chủ ' +
+				'</a></li><li class="breadcrumb-item active">' +
+				$(this).text() +
+				'</li>'
+		);
+		swapMain('formdathang');
 	});
 
 	// thể loại
@@ -89,8 +129,7 @@ $(document).ready(function () {
 	$('.menunhacungcap').click(function () {
 		// showdatatable('menunhacungcap'); //show bảng thương hiệU
 		$('.titlestatus').html(
-			' <li class="breadcrumb-item"><a href="#">' +
-				$(this).parents('.danhmuc').children('.tendanhmuc').text() +
+			' <li class="breadcrumb-item"><a href="#">Trang chủ ' +
 				'</a></li><li class="breadcrumb-item active">' +
 				$(this).text() +
 				'</li>'
@@ -106,13 +145,28 @@ $(document).ready(function () {
 	$('.menusanpham').click(function () {
 		flag_pic = 0; //0 là đang trong sản phẩm
 		$('.titlestatus').html(
-			' <li class="breadcrumb-item"><a href="#">' +
-				$(this).parents('.danhmuc').children('.tendanhmuc').text() +
+			' <li class="breadcrumb-item"><a href="#">Trang chủ ' +
 				'</a></li><li class="breadcrumb-item active">' +
 				$(this).text() +
 				'</li>'
 		);
 		swapMain('formsanpham');
+		resetButtonSP();
+		resetViewSP();
+		resetThemHinhAnhSP();
+		showDataSanPham(0, record);
+	});
+
+	// sản phẩm
+	$('.menudoanhthu').click(function () {
+		flag_pic = 0; //0 là đang trong sản phẩm
+		$('.titlestatus').html(
+			' <li class="breadcrumb-item"><a href="#">Trang chủ ' +
+				'</a></li><li class="breadcrumb-item active">' +
+				$(this).text() +
+				'</li>'
+		);
+		swapMain('formdoanhthu');
 		resetButtonSP();
 		resetViewSP();
 		resetThemHinhAnhSP();
@@ -233,7 +287,13 @@ function queryDataGet_JSON(url, dataSend, callback) {
 /* ---- Hàm chuyển đổi ẩn/hiện các table ---- */
 function swapMain(tenbien) {
 	$('.formtrangchu').addClass('is-hidden'); //ẩn
+	$('.formsanpham').addClass('is-hidden'); //ẩn
+	$('.formnhacungcap').addClass('is-hidden'); //ẩn
+	$('.formnhanvien').addClass('is-hidden'); //ẩn
+	$('.formdathang').addClass('is-hidden'); //ẩn
+	$('.formdoanhthu').addClass('is-hidden'); //ẩn
 	$('.formkeluong').addClass('is-hidden'); //ẩn
+
 	$('.formtheloai').addClass('is-hidden'); //ẩn
 	$('.formthuonghieu').addClass('is-hidden'); //ẩn
 	$('.formsanpham').addClass('is-hidden'); //ẩn

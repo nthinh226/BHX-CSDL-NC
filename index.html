@@ -175,24 +175,46 @@
           <!--------------------------------------------------------------------- Sidebar Menu --------------------------------------------------------------------->
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-              <!-- <li class="nav-item danhmuc">
-                <a class="nav-link" href="#">
-                  <i class="fa fa-h-square" aria-hidden="true"></i> &nbsp;&nbsp;
-                  <span class="menu-title">Trang chủ</span>
-                </a>
-              </li>
-
-              <li class="nav-item danhmuc">
-                <a class="nav-link" href="index.html">
-                  <i class="fa fa-h-square" aria-hidden="true"></i> &nbsp;&nbsp;
-                  <span class="menu-title">Sản phẩm</span>
-                </a>
-              </li> -->
 
               <li class="nav-item menutrangchu">
                 <a href="#" class="nav-link tendanhmuc">
                   <i class="fas fa-building"></i> &nbsp;&nbsp;
                   <p>Trang chủ</p>
+                </a>
+              </li>
+
+              <li class="nav-item menusanpham">
+                <a href="#" class="nav-link tendanhmuc">
+                  <i class="fas fa-building"></i> &nbsp;&nbsp;
+                  <p>Sản phẩm</p>
+                </a>
+              </li>
+
+              <li class="nav-item menunhacungcap">
+                <a href="#" class="nav-link tendanhmuc">
+                  <i class="fas fa-building"></i> &nbsp;&nbsp;
+                  <p>Nhà cung cấp</p>
+                </a>
+              </li>
+
+              <li class="nav-item menunhanvien">
+                <a href="#" class="nav-link tendanhmuc">
+                  <i class="fas fa-building"></i> &nbsp;&nbsp;
+                  <p>Nhân viên</p>
+                </a>
+              </li>
+
+              <li class="nav-item menudathang">
+                <a href="#" class="nav-link tendanhmuc">
+                  <i class="fas fa-building"></i> &nbsp;&nbsp;
+                  <p>Đặt hàng</p>
+                </a>
+              </li>
+
+              <li class="nav-item menudoanhthu">
+                <a href="#" class="nav-link tendanhmuc">
+                  <i class="fas fa-building"></i> &nbsp;&nbsp;
+                  <p>Doanh thu</p>
                 </a>
               </li>
 
@@ -311,10 +333,7 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1 class="m-0">Quản trị</h1>
-              </div><!-- /.col -->
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right titlestatus">
+                <ol class="breadcrumb float-sm-left titlestatus">
                 </ol>
               </div><!-- /.col -->
             </div><!-- /.row -->
@@ -325,7 +344,7 @@
         <!------------------------------------------------------------------------- Main content ------------------------------------------------------------------------->
         <section class="content">
           <!-- Danh mục -->
-          <!----------------------------------------------------------------------quản lý thể loại---------------------------------------------------------------------->
+          <!-------------------------------------------------------------------------------------------------------------------------------------------->
           <!-- trang chu-->
           <div class="row formtrangchu is-hidden">
             <section class="col-lg-12">
@@ -336,57 +355,111 @@
                     <div class="card card-info">
                       <!-- /.card-header -->
                       <!-- form start -->
-                      <div class="col-sm-12">
-                        <div class="col-lg-3 d-flex flex-column">
-                          <form class="search-form" action="#">
-                            <input type="search" class="form-control" placeholder="Search..." title="Search here">
-                          </form>
-                        </div>
-                        <div class="home-tab">
-                          <div class="tab-content tab-content-basic">
-                            <div class="tab-pane fade show active" id="overview" role="tabpanel"
-                              aria-labelledby="overview">
-                              <div class="row">
-                                <div class="col-lg-8 d-flex flex-column">
-                                  <div class="row flex-grow">
-                                    <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
-                                      <div class="card card-rounded">
-                                        <div class="card-body">
-                                          <h3>trang chủ</h3>
-                                          <div class="d-sm-flex justify-content-between align-items-start">
-                                            <div>
-                                              <h4 class="card-title card-title-dash"></h4>
-                                              <h5 class="card-subtitle card-subtitle-dash"></h5>
-                                            </div>
-                                            <div id="performance-line-legend">
-                                              <div class="chartjs-legend">
-                                                <ul>
-                                                  <li><span style="background-color:#1F3BB3"></span>This week</li>
-                                                  <li><span style="background-color:#52CDFF"></span>Last week</li>
-                                                </ul>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="home-tab">
+                            <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                              <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview"
+                                    role="tab" aria-controls="overview" aria-selected="true">Tổng quan</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#audiences" role="tab"
+                                    aria-selected="false">Biểu đồ</a>
+                                </li>
+
+                              </ul>
+                            </div>
+                            <div class="tab-content tab-content-basic">
+                              <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                aria-labelledby="overview">
+                                <div class="row">
+                                  <div class="col-sm-12">
+                                    <div class="statistics-details d-flex align-items-center justify-content-between">
+                                      <div>
+                                        <p class="statistics-title">Tổng số đơn hàng</p>
+                                        <h3 class="rate-percentage">200</h3>
+                                      </div>
+                                      <div>
+                                        <p class="statistics-title">Tổng số nhân viên</p>
+                                        <h3 class="rate-percentage">20</h3>
+                                      </div>
+                                      <div>
+                                        <p class="statistics-title">Tổng số khách hàng</p>
+                                        <h3 class="rate-percentage">1000</h3>
+                                      </div>
+                                      <div>
+                                        <p class="statistics-title">Tổng số nhà cung cấp</p>
+                                        <h3 class="rate-percentage">100</h3>
+                                      </div>
+                                      <div>
+                                        <p class="statistics-title">Tổng số nhà xuất bản</p>
+                                        <h3 class="rate-percentage">50</h3>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-lg-8 d-flex flex-column">
+                                    <div class="row flex-grow">
+                                      <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                                        <div class="card card-rounded">
+                                          <div class="card-body">
+                                            <div class="d-sm-flex justify-content-between align-items-start">
+                                              <div>
+                                                <h4 class="card-title card-title-dash"></h4>
+                                                <h5 class="card-subtitle card-subtitle-dash"></h5>
                                               </div>
+                                              <div id="performance-line-legend"></div>
+                                            </div>
+                                            <div class="chartjs-wrapper mt-5">
+                                              <canvas id="performaneLine"></canvas>
                                             </div>
                                           </div>
-                                          <div class="chartjs-wrapper mt-5">
-                                            <div class="chartjs-size-monitor">
-                                              <div class="chartjs-size-monitor-expand">
-                                                <div class=""></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-4 d-flex flex-column">
+                                    <div class="row flex-grow">
+
+                                      <div class="col-md-6 col-lg-12 grid-margin stretch-card">
+                                        <div class="card card-rounded">
+                                          <div class="card-body">
+                                            <div class="row">
+                                              <div class="col-sm-6">
+                                                <div
+                                                  class="d-flex justify-content-between align-items-center mb-2 mb-sm-0">
+                                                  <div class="circle-progress-width">
+                                                    <div id="totalVisitors" class="progressbar-js-circle pr-2"></div>
+                                                  </div>
+                                                  <div>
+                                                    <p class="text-small mb-2">Tổng số Visitor</p>
+                                                    <h4 class="mb-0 fw-bold">26.80%</h4>
+                                                  </div>
+                                                </div>
                                               </div>
-                                              <div class="chartjs-size-monitor-shrink">
-                                                <div class=""></div>
+                                              <div class="col-sm-6">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                  <div class="circle-progress-width">
+                                                    <div id="visitperday" class="progressbar-js-circle pr-2"></div>
+                                                  </div>
+                                                  <div>
+                                                    <p class="text-small mb-2">Visits/ ngày</p>
+                                                    <h4 class="mb-0 fw-bold">9065</h4>
+                                                  </div>
+                                                </div>
                                               </div>
                                             </div>
-                                            <canvas id="performaneLine"
-                                              style="display: block; width: 639px; height: 150px;" width="639"
-                                              height="150" class="chartjs-render-monitor"></canvas>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
 
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -398,7 +471,312 @@
               </div>
             </section>
           </div>
-          <!-- end kê lương -->
+          <!-- end trang chu -->
+
+          <!-- San pham -->
+          <div class="row formsanpham is-hidden">
+            <section class="col-lg-12">
+              <div class="card">
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="home-tab">
+                            <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+
+                              <div>
+                                <div class="btn-wrapper">
+
+                                  <a href="#" class="btn btn-primary text-white me-0" style="background-color:orange;">
+                                    Thêm Sản Phẩm</a>
+                                  <a href="#" class="btn btn-primary text-white me-0"
+                                    style="background-color:orange;"><i class="icon-download"></i> EXCEL I/E</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tab-content tab-content-basic">
+                              <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                aria-labelledby="overview">
+                                <div class="row">
+                                  <div class="col-lg-12 d-flex flex-column">
+                                    <div class="row flex-grow">
+                                      <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+
+                                        <div class="card-body">
+
+                                          <div class="input-group">
+                                            <input type="text" class="form-control txtsearch"
+                                              placeholder="Nhập Thông Tin Cần Tìm" aria-label="Recipient's username">
+                                            <div class="input-group-append">
+
+                                              <button class="btn btn-sm btn-primary btnsearch" type="button">
+                                                <i class="fa fa-search" aria-hidden="true"></i></button>
+                                            </div>
+                                          </div>
+                                          <div class="table-responsive">
+                                            <h1 style="background-color:Orange;">
+                                              <table class="table table-hover">
+
+                                                <thead>
+                                                  <tr style="color:white; font-size: 14px;">
+                                                    <th> Id</th>
+                                                    <th>| Tên</th>
+                                                    <th>| Hình ảnh</th>
+                                                    <th> Đơn vị tính</th>
+                                                    <th>| Giá</th>
+                                                    <th>| Actions</th>
+                                                  </tr>
+                                                </thead>
+                                            </h1>
+                                            <tbody class="addListKho">
+                                              <tr>
+                                            </tbody>
+                                            </table>
+                                          </div>
+                                          <div class="pagenumkho"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.card-body -->
+                </div>
+            </section>
+          </div>
+          <!-- end san pham -->
+          <!-- nhan vien -->
+          <div class="row formnhanvien is-hidden">
+            <section class="col-lg-12">
+              <div class="card">
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="home-tab">
+                            <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+
+                              <div>
+                                <div class="btn-wrapper">
+
+                                  <a href="#" class="btn btn-primary text-white me-0 btnthemnhanvien"
+                                    style="background-color:orange;">
+                                    Thêm Nhân Viên</a>
+                                  <a href="#" class="btn btn-primary text-white me-0"
+                                    style="background-color:orange;"><i class="icon-download"></i> EXCEL I/E</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tab-content tab-content-basic">
+                              <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                aria-labelledby="overview">
+                                <div class="row">
+                                  <div class="col-lg-12 d-flex flex-column">
+                                    <div class="row flex-grow">
+                                      <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                                        <div class="card-body">
+                                          <div class="input-group">
+                                            <input type="text" class="form-control txtsearch"
+                                              placeholder="Nhập Thông Tin Cần Tìm" aria-label="Recipient's username">
+                                            <div class="input-group-append">
+
+                                              <button class="btn btn-sm btn-primary btnsearch" type="button">
+                                                <i class="fa fa-search" aria-hidden="true"></i></button>
+                                            </div>
+                                          </div>
+                                          <div class="table-responsive">
+                                            <h1 style="background-color:Orange;">
+                                              <table class="table table-hover">
+
+                                                <thead>
+                                                  <tr style="color:white; font-size: 14px;">
+                                                    <th> STT</th>
+                                                    <th>| Mã NV</th>
+                                                    <th>| Tên</th>
+                                                    <th>| Lương</th>
+                                                    <th>| Giới Tính</th>
+                                                    <th>| Chức vụ</th>
+                                                    <th>| Địa chỉ</th>
+                                                    <th>| Số điện thoại</th>
+                                                  </tr>
+                                                </thead>
+                                            </h1>
+                                            <tbody class="addListKho">
+                                              <tr>
+                                            </tbody>
+                                            </table>
+                                          </div>
+                                          <div class="pagenumkho"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.card-body -->
+                </div>
+            </section>
+          </div>
+          <!-- end nhan vien -->
+          <!-- dat hang -->
+          <div class="row formdathang is-hidden">
+            <section class="col-lg-12">
+              <div class="card">
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="home-tab">
+                            <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                              <div>
+                                <div class="btn-wrapper">
+
+                                  <a href="#" class="btn btn-primary text-white me-0" style="background-color:orange;">
+                                    Thêm Nhân Viên</a>
+                                  <a href="#" class="btn btn-primary text-white me-0"
+                                    style="background-color:orange;"><i class="icon-download"></i> EXCEL I/E</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tab-content tab-content-basic">
+                              <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                aria-labelledby="overview">
+                                <div class="row">
+                                  <div class="col-lg-12 d-flex flex-column">
+                                    <div class="row flex-grow">
+                                      <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+
+                                        <div class="card-body">
+
+                                          <div class="input-group">
+                                            <input type="text" class="form-control txtsearch"
+                                              placeholder="Nhập Thông Tin Cần Tìm" aria-label="Recipient's username">
+                                            <div class="input-group-append">
+
+                                              <button class="btn btn-sm btn-primary btnsearch" type="button">
+                                                <i class="fa fa-search" aria-hidden="true"></i></button>
+                                            </div>
+                                          </div>
+                                          <div class="table-responsive">
+                                            <h1 style="background-color:Orange;">
+                                              <table class="table table-hover">
+
+                                                <thead>
+                                                  <tr style="color:white; font-size: 14px;">
+                                                    <th> STT</th>
+                                                    <th>| Mã đơn</th>
+                                                    <th>| Tên khách</th>
+                                                    <th>| Địa chỉ</th>
+                                                    <th>| Số điện thoại</th>
+                                                    <th>| Tổng tiền</th>
+                                                    <th>| Ngày đặt</th>
+                                                    <th>| Ngày giao</th>
+                                                  </tr>
+                                                </thead>
+                                            </h1>
+                                            <tbody class="addListKho">
+                                              <tr>
+                                            </tbody>
+                                            </table>
+                                          </div>
+                                          <div class="pagenumkho"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.card-body -->
+                </div>
+            </section>
+          </div>
+          <!-- end dat hgang -->
+          <!-- doanh thu -->
+          <div class="row formdoanhthu is-hidden">
+            <section class="col-lg-12">
+              <div class="card">
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <div class="tab-content p-0">
+                    <div class="card card-info">
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="col-lg-3 d-flex flex-column">
+                            <form class="search-form" action="#">
+                              <input type="search" class="form-control" placeholder="Search..." title="Search here">
+                            </form>
+                          </div>
+                          <div class="home-tab">
+                            <div class="tab-content tab-content-basic">
+                              <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                aria-labelledby="overview">
+                                <div class="row">
+                                  <div class="col-lg-8 d-flex flex-column">
+                                    <div class="row flex-grow">
+                                      <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                                        <div class="card card-rounded">
+                                          <div class="card-body">
+                                            <h3>Doanh thu</h3>
+                                            <div class="d-sm-flex justify-content-between align-items-start">
+                                              <div>
+                                                <h4 class="card-title card-title-dash"></h4>
+                                                <h5 class="card-subtitle card-subtitle-dash"></h5>
+                                              </div>
+                                              <div id="performance-line-legend"></div>
+                                            </div>
+                                            <div class="chartjs-wrapper mt-5">
+                                              <canvas id="performaneLine"></canvas>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- /.card-body -->
+                </div>
+            </section>
+          </div>
+          <!-- end doanh thu -->
           <!-- Ke luong -->
           <div class="row formkeluong is-hidden">
             <section class="col-lg-12">
@@ -409,49 +787,60 @@
                     <div class="card card-info">
                       <!-- /.card-header -->
                       <!-- form start -->
-                      <div class="col-sm-12">
-                        <div class="col-lg-3 d-flex flex-column">
-                          <form class="search-form" action="#">
-                            <input type="search" class="form-control" placeholder="Search..." title="Search here">
-                          </form>
-                        </div>
-                        <div class="home-tab">
-                          <div class="tab-content tab-content-basic">
-                            <div class="tab-pane fade show active" id="overview" role="tabpanel"
-                              aria-labelledby="overview">
-                              <div class="row">
-                                <div class="col-lg-8 d-flex flex-column">
-                                  <div class="row flex-grow">
-                                    <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
-                                      <div class="card card-rounded">
-                                        <div class="card-body">
-                                          <h3>Doanh thu</h3>
-                                          <div class="d-sm-flex justify-content-between align-items-start">
-                                            <div>
-                                              <h4 class="card-title card-title-dash"></h4>
-                                              <h5 class="card-subtitle card-subtitle-dash"></h5>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="home-tab">
+                            <div class="tab-content tab-content-basic">
+                              <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                aria-labelledby="overview">
+
+                                <div class="row">
+                                  <div class="col-lg-12 d-flex flex-column">
+                                    <div class="row flex-grow">
+                                      <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                                        <div class="card card-rounded">
+                                          <!-- </div> -->
+                                          <div class="card-body">
+                                            <!-- <h4 class="card-title">Các nhân viên hiện có:</h4> -->
+                                            <div class="table-responsive">
+                                              <table class="table table-hover">
+                                                <thead>
+                                                  <tr>
+                                                    <th colspan="4">
+                                                      <div class="input-group">
+                                                        <input type="text" class="form-control txtsearch"
+                                                          placeholder="Nhập Thông Tin Cần Tìm"
+                                                          aria-label="Recipient's username">
+                                                        <div class="input-group-append">
+
+                                                          <button class="btn btn-sm btn-primary btnsearch"
+                                                            type="button">
+                                                            <i class="fa fa-search" aria-hidden="true"></i></button>
+                                                        </div>
+                                                      </div>
+                                                    </th>
+                                                  </tr>
+                                                  <tr style="color: white;">
+                                                    <th style="background-color:#fcba03; border-top-left-radius: 5px;">
+                                                      STT</th>
+                                                    <th style="background-color:#fcba03">Mã NV</th>
+                                                    <th style="background-color:#fcba03">Tên</th>
+                                                    <th style="background-color:#fcba03">Ngày làm</th>
+                                                    <th style="background-color:#fcba03">Vắng Phép</th>
+                                                    <th style="background-color:#fcba03">Vắng không phép</th>
+                                                    <th style="background-color:#fcba03">Phụ cấp</th>
+                                                    <th style="background-color:#fcba03">Thưởng</th>
+                                                    <th style="background-color:#fcba03">Phạt</th>
+                                                    <th style="background-color:#fcba03; border-top-right-radius: 5px;">
+                                                      Lương</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody class="addListNhanvien">
+                                                  <tr>
+                                                </tbody>
+                                              </table>
                                             </div>
-                                            <div id="performance-line-legend">
-                                              <div class="chartjs-legend">
-                                                <ul>
-                                                  <li><span style="background-color:#1F3BB3"></span>This week</li>
-                                                  <li><span style="background-color:#52CDFF"></span>Last week</li>
-                                                </ul>
-                                              </div>
-                                            </div>
-                                          </div>
-                                          <div class="chartjs-wrapper mt-5">
-                                            <div class="chartjs-size-monitor">
-                                              <div class="chartjs-size-monitor-expand">
-                                                <div class=""></div>
-                                              </div>
-                                              <div class="chartjs-size-monitor-shrink">
-                                                <div class=""></div>
-                                              </div>
-                                            </div>
-                                            <canvas id="performaneLine"
-                                              style="display: block; width: 639px; height: 150px;" width="639"
-                                              height="150" class="chartjs-render-monitor"></canvas>
+                                            <div class="pagenumnhanvien"></div>
                                           </div>
                                         </div>
                                       </div>
@@ -459,16 +848,13 @@
                                   </div>
                                 </div>
                               </div>
-
                             </div>
                           </div>
                         </div>
                       </div>
-
                     </div>
-                  </div>
-                </div><!-- /.card-body -->
-              </div>
+                  </div><!-- /.card-body -->
+                </div>
             </section>
           </div>
           <!-- end kê lương -->
@@ -705,89 +1091,76 @@
           <div class="row formnhacungcap">
             <section class="col-lg-12">
               <div class="card">
-                <div class="card-header bg-primary">
-                  <h3 class="card-title"><i class="fas fa-building">&nbsp;</i>Thông tin của nhà cung cấp </h3>
-                </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                   <div class="tab-content p-0">
                     <div class="card card-info">
                       <!-- /.card-header -->
                       <!-- form start -->
-                      <form class="form-horizontal">
-                        <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="home-tab">
+                            <div class="d-sm-flex align-items-center justify-content-between border-bottom">
+                              <div>
+                                <div class="btn-wrapper">
 
-                          <div class="form-group row">
-                            <div class="col-sm-6">
-                              <label for="inputEmail3" class="col-sm-6 col-form-label ">Mã NCC <span
-                                  class="batbuocco">*</span></label>
-                              <div class="col-sm-12">
-                                <input type="text" class="form-control txtmancc"
-                                  placeholder="Nhập mã nhà cung cấp của sản phẩm">
+                                  <a href="#" class="btn btn-primary text-white me-0" style="background-color:orange;">
+                                    Thêm Sản Phẩm</a>
+                                  <a href="#" class="btn btn-primary text-white me-0"
+                                    style="background-color:orange;"><i class="icon-download"></i> EXCEL I/E</a>
+                                </div>
                               </div>
                             </div>
+                            <div class="tab-content tab-content-basic">
+                              <div class="tab-pane fade show active" id="overview" role="tabpanel"
+                                aria-labelledby="overview">
+                                <div class="row">
+                                  <div class="col-lg-12 d-flex flex-column">
+                                    <div class="row flex-grow">
+                                      <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
 
-                            <div class="col-sm-6">
-                              <label for="inputPassword3" class="col-sm-6 col-form-label">Tên NCC <span
-                                  class="batbuocco">*</span></label>
-                              <div class="col-sm-12">
-                                <input type="text" class="form-control txttenncc"
-                                  placeholder="Nhập tên nhà cung cấp của sản phẩm">
+                                        <div class="card-body">
+
+                                          <div class="input-group">
+                                            <input type="text" class="form-control txtsearch"
+                                              placeholder="Nhập Thông Tin Cần Tìm" aria-label="Recipient's username">
+                                            <div class="input-group-append">
+
+                                              <button class="btn btn-sm btn-primary btnsearch" type="button">
+                                                <i class="fa fa-search" aria-hidden="true"></i></button>
+                                            </div>
+                                          </div>
+                                          <div class="table-responsive">
+                                            <h1 style="background-color:Orange;">
+                                              <table class="table table-hover">
+
+                                                <thead>
+                                                  <tr style="color:white; font-size: 14px;">
+                                                    <th> STT</th>
+                                                    <th>| Mã NCC</th>
+                                                    <th>| Tên NCC</th>
+                                                    <th>| Địa chỉ</th>
+                                                    <th>| Số điện thoại</th>
+                                                  </tr>
+                                                </thead>
+                                            </h1>
+                                            <tbody class="addListKho">
+                                              <tr>
+                                            </tbody>
+                                            </table>
+                                          </div>
+                                          <div class="pagenumkho"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
                               </div>
                             </div>
                           </div>
-
-                          <div class="form-group row">
-                            <div class="col-sm-6">
-                              <label for="inputEmail3" class="col-sm-6 col-form-label">Địa chỉ</label>
-                              <div class="col-sm-12">
-                                <input type="email" class="form-control txtdiachincc" placeholder="Nhập địa chỉ email">
-                              </div>
-                            </div>
-
-                            <div class="col-sm-3">
-                              <label for="inputPassword3" class="col-sm-6 col-form-label">SDT <span
-                                  class="batbuocco">*</span></label>
-                              <div class="col-sm-12">
-                                <input type="text" class="form-control txtsdtncc" placeholder="Nhập số điện thoại">
-                              </div>
-                            </div>
-
-                            <div class="col-sm-3">
-                              <label for="inputPassword3" class="col-sm-6 col-form-label">Fax</label>
-                              <div class="col-sm-12">
-                                <input type="text" class="form-control txtfaxncc" placeholder="Nhập số Fax">
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="form-group row">
-                            <div class="col-sm-6">
-                              <label for="inputPassword3" class="col-sm-6 col-form-label">Email <span
-                                  class="batbuocco">*</span></label>
-                              <div class="col-sm-12">
-                                <input type="email" class="form-control txtemailncc" placeholder="Nhập địa chỉ email">
-                              </div>
-                            </div>
-                          </div>
-
                         </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-
-                          <button type="button" class="btn btn-info btnthemncc"><i
-                              class="fa-solid fa-file-plus "></i>Thêm</button>&nbsp;
-                          <button type="button" class="btn btn-info btnluuncc"><i
-                              class="fa-solid fa-floppy-disk"></i>&nbsp;Lưu</button>&nbsp;
-                          <button type="button" class="btn btn-info btnxoancc"><i
-                              class="fa-solid fa-trash-can "></i>&nbsp;Xóa</button>&nbsp;
-                          <button type="button" class="btn btn-info btnsuancc"><i
-                              class="fa-solid fa-pen-to-square "></i>Sửa</button>
-                          <button type="button" class="btn btn-default float-right btnlamlaincc">Làm lại</button>
-
-                        </div>
-                        <!-- /.card-footer -->
-                      </form>
+                      </div>
                     </div>
                     <div class="card">
                       <div class="card-header">
@@ -821,8 +1194,9 @@
           </div>
           <!-- end quản lý nhà cung cấp -->
 
+
           <!------------------------------------------------------------------- quản lý sản phẩm ------------------------------------------------------------------->
-          <div class="row formsanpham">
+          <div class="row formsanpham1 is-hidden">
             <section class="col-lg-12">
               <div class="card">
                 <div class="card-header bg-lightblue">
@@ -1002,7 +1376,6 @@
                 </div>
             </section>
           </div> <!-- end quản lý sản phẩm -->
-
           <!------------------------------------------------------------------- quản lý thương hiệu sản phẩm ------------------------------------------------------------------->
           <div class="row formthuonghieusanpham">
             <section class="col-lg-12">
@@ -1739,6 +2112,83 @@
       </div>
     </div>
     <!-- end modal đổi mật khẩu -->
+    <!--------------------------------------------------------------------- modal them nhan vien --------------------------------------------------------------------->
+    <div class="modal fade showmodalthemnhanvien" id="modal-default">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Thêm nhân viên</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
+                <div class="row">
+                  <div class="col-lg-12 d-flex flex-column">
+                    <div class="row flex-grow">
+                      <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
+                        <div class="card card-rounded">
+                          <div style="display: flex">
+                            <div class="card-body" style="position: relative">
+                              <a class=""
+                                style="background: orange; clip-path: circle(50%);height: 6em; width: 6em; margin-left: 60px; margin-top: 120px; position: absolute; text-decoration: none; color: white; cursor: pointer;">
+                                <img src="images/add_image.png"
+                                  style="width: 30px; margin-left: 30px; margin-top: 10px;"></img>
+                                <p style="text-align: center; margin-top: 10px;">Tải lên ảnh đại diện</p>
+                              </a>
+                              <p style="text-align: center; margin-top: 240px;">Cho phép *.jeg, *.jpg, *.png, *.gif
+                              </p>
+                            </div>
+                            <div class="card-body">
+                              <form class="form-group">
+                                <label for="exampleInputName1">Mã nhân viên</label>
+                                <input type="text" data-masked="" data-inputmask="'mask': 'aa999'"
+                                  class="form-control txtmanv" id="exampleInputName1" placeholder="">
+
+                                <label>Tên nhân viên:
+                                </label>
+                                <input type="text" class="form-control txttennv" id="exampleInputEmail3" placeholder="">
+                                <label>Địa chỉ:
+                                </label>
+                                <input type="text" class="form-control txtdiachinv" id="exampleInputEmail3"
+                                  placeholder="">
+                                <label>Số điện thoại :
+                                </label>
+                                <input type="text" class="form-control txtsdtnv" id="exampleInputEmail3" placeholder="">
+                                <label>Email:
+                                </label>
+                                <input type="text" class="form-control txtemailnv" id="exampleInputEmail3"
+                                  placeholder="">
+                                <label>Chức vụ:
+                                </label>
+                                <input type="text" class="form-control txtcccd" id="exampleInputEmail3" placeholder="">
+                              </form>
+                            </div>
+                          </div>
+                          <p style="margin-left: 20px; font-weight: bold;">Mô tả:</p>
+                          <div class="card-body"><textarea style="width: 100%; height: 400px; border: 1px solid wheat"
+                              placeholder="Decription..."></textarea></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary btn_change_pass">Thêm</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- end modal them nhan vien -->
 
     <!------------------------------------------------------------------ modal chi tiết đơn hàng ------------------------------------------------------------------>
     <div class="modal fade showmodalchitietdh" id="modal-xl" aria-modal="true" role="dialog">
