@@ -218,12 +218,12 @@ function resetButtonNCC() {
 	$('.txtmancc').prop('disabled', false);
 }
 //viết hàm hiển thị dữ liệu lên table
-function showDataNhaCungCap() {
+function showDataKeLuong() {
 	var dataSend = {
-		event: 'getALLNCC',
+		event: 'getALL',
 	};
 
-	// queryDataPost_JSON('php/apinhacungcap.php', dataSend, function (data) {
+	// queryDataPost_JSON('php/apikeluong.php', dataSend, function (data) {
 	// 	console.log(data);
 	// 	if (data.items.length == 0) {
 	// 		$('.addListNhaCungCap').html(
@@ -270,9 +270,39 @@ function showDataNhaCungCap() {
 	var htmls = '';
 	const data = {
 		items: [
-			{ mancc: '1', tenncc: 'abc', diachincc: 'abc', sdtncc: 'abc@' },
-			{ mancc: '1', tenncc: 'abc', diachincc: 'abc', sdtncc: 'abc@' },
-			{ mancc: '1', tenncc: 'abc', diachincc: 'abc', sdtncc: 'abc@' },
+			{
+				manv: '1',
+				tennv: 'abc',
+				ngaylam: 30,
+				vangphep: 0,
+				vangkhongphep: 0,
+				phucap: 500000,
+				thuong: 100000,
+				phat: 0,
+				luong: 6600000,
+			},
+			{
+				manv: '2',
+				tennv: 'abc',
+				ngaylam: 30,
+				vangphep: 0,
+				vangkhongphep: 0,
+				phucap: 500000,
+				thuong: 100000,
+				phat: 0,
+				luong: 6600000,
+			},
+			{
+				manv: '3',
+				tennv: 'abc',
+				ngaylam: 30,
+				vangphep: 0,
+				vangkhongphep: 0,
+				phucap: 500000,
+				thuong: 100000,
+				phat: 0,
+				luong: 6600000,
+			},
 		],
 	};
 	var list = data.items;
@@ -281,33 +311,39 @@ function showDataNhaCungCap() {
 		var d = list[item];
 		htmls =
 			htmls +
-			'<tr data-mancc="' +
-			d.mancc +
-			'" data-tenncc="' +
-			d.tenncc +
-			'" data-diachincc="' +
-			d.diachincc +
-			'" data-sdtncc="' +
-			d.sdtncc +
-			'"><td>' +
+			'<tr><td>' +
 			stt +
 			'</td>' +
 			'<td>' +
-			d.mancc +
+			d.manv +
 			'</td>' +
 			'<td>' +
-			d.tenncc +
+			d.tennv +
 			'</td>' +
 			'<td>' +
-			d.diachincc +
+			d.ngaylam +
 			'</td>' +
 			'<td>' +
-			d.sdtncc +
+			d.vangphep +
+			'</td>' +
+			'<td>' +
+			d.vangkhongphep +
+			'</td>' +
+			'<td>' +
+			d.phucap +
+			'</td>' +
+			'<td>' +
+			d.thuong +
+			'</td>' +
+			'<td>' +
+			d.phat +
+			'</td>' +
+			'<td>' +
+			d.luong +
 			'</td>' +
 			'</tr>';
 		stt++;
 	}
-	console.log('abvavbas');
 	console.log(htmls);
-	$('.addListNhaCungCap').html(htmls);
+	$('.addListKeLuong').html(htmls);
 }
