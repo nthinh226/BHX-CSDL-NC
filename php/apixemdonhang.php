@@ -219,9 +219,13 @@ switch ($event) {
         $mang = array();
         $datestart = $_POST['datestart'];
         $dateend = $_POST['dateend'];
-        $sql = mysqli_query($conn, "select v.ngay, v.sodon, v.tongtien from view_baocaodoanhthutheongay v where v.ngay between '" . $datestart . "' and '" . $dateend . "' order by v.ngay asc ");
+        $sql = sqlsrv_query($conn, "select v.ngay, v.sodon, v.tongtien from view_baocaodoanhthutheongay v where v.ngay between '" . $datestart . "' and '" . $dateend . "' order by v.ngay asc ", array(), array( "Scrollable" => 'static' ));
+        if (!$sql) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+        header("Content-Type: application/json");
 
-        while ($rows = mysqli_fetch_array($sql)) {
+        while ($rows = sqlsrv_fetch_array($sql, SQLSRV_FETCH_ASSOC)) {
             $usertemp['ngay'] = $rows['ngay'];
             $usertemp['sodon'] = $rows['sodon'];
             $usertemp['tongtien'] = $rows['tongtien'];
@@ -229,13 +233,13 @@ switch ($event) {
         }
 
         //tổng tiền từ ngày - đến ngày -
-        $sql_tongtien = mysqli_query($conn, "select sum(v.tongtien) as doanhthu from view_baocaodoanhthutheongay v where v.ngay between '" . $datestart . "' and '" . $dateend . "'");
-        $row_tongtien = mysqli_fetch_array($sql_tongtien);
+        $sql_tongtien = sqlsrv_query($conn, "select sum(v.tongtien) as doanhthu from view_baocaodoanhthutheongay v where v.ngay between '" . $datestart . "' and '" . $dateend . "'", array(), array( "Scrollable" => 'static' ));
+        $row_tongtien = sqlsrv_fetch_array($sql_tongtien, SQLSRV_FETCH_ASSOC);
         $doanhthu=$row_tongtien['doanhthu'];
         $jsonData['items'] = $mang;
         $jsonData['doanhthu'] = $doanhthu;
         echo json_encode($jsonData);
-        mysqli_close($conn);
+        sqlsrv_close($conn);
         break;
     default:
         # code...
